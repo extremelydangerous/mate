@@ -1,4 +1,4 @@
-This is mate-desktop pkgsrc My version of.. 
+This is mate-desktop http://mate-desktop.org pkgsrc My version of.. 
 this version is built in a way that ALL of mate desktop, including gdm 2.20 (the last usable version) is in the same directory.
 
 All you have to do is to create a "mate" directory in the /usr/pkgsrc, jump into /usr/pkgsrc/mate/mate and do a make install
