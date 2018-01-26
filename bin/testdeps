@@ -1,0 +1,6 @@
+set -e
+for i in $(cat /tmp/lista)
+do
+	echo working on $i
+	(cd $i;make clean)
+done

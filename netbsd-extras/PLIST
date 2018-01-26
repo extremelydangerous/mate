@@ -1,0 +1,6 @@
+@comment $NetBSD$
+bin/findprinter
+bin/runbatch
+bin/xtermtitle
+bin/truncate
+man/man1/truncate.1
