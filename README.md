@@ -6,4 +6,5 @@ some packages ex: caja  will complain about Mesalibs, the solution is to jump in
 together is the file /etc/mk.conf that MUST be configured to your needs
 
 To add files:
-git commit -am "comment"; git push origin master
+git commit -am "comment"
+git push origin master
