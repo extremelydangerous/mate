@@ -5,6 +5,6 @@ All you have to do is to create a "mate" directory in the /usr/pkgsrc, jump into
 some packages ex: caja  will complain about Mesalibs, the solution is to jump into /usr/pkgsrc/mate/caja  and do a make clean;make from within the directory, this will "make" the package. Another "make install"  from /usr/pkgsrc/mate/mate, installs and contiue
 together is the file /etc/mk.conf that MUST be configured to your needs
 
-To add files:
-git commit -am "comment"
+To add files:<br>
+git commit -am "comment"<br>
 git push origin master
