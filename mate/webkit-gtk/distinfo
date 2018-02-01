@@ -1,0 +1,22 @@
+$NetBSD: distinfo,v 1.95 2017/04/25 10:37:26 wiz Exp $
+
+SHA1 (webkitgtk-2.18.5.tar.xz) = 5f36db464f6b7bbe6a57e55bc9bb172f87a4c398
+RMD160 (webkitgtk-2.18.5.tar.xz) = edc5e8b34d0a6a647753cc67d1b421035d327b1a
+SHA512 (webkitgtk-2.18.5.tar.xz) = f11a45150af4ba36192380ad0757da53d50b660f0a4f127a71123a6d80e9757d16a1deb1d69b235852c62bb1225352823932c60df7d6aa9372442ed7a165068c
+Size (webkitgtk-2.18.5.tar.xz) = 14828616 bytes
+SHA1 (patch-CMakeLists.txt) = 0ecf9070dc387b206b8c8083914c1fa0514a8ecc
+SHA1 (patch-Source_JavaScriptCore_CMakeLists.txt) = 1b3485f72d809b2a1d6ec047b36331a6489fd10d
+SHA1 (patch-Source_JavaScriptCore_assembler_ARMAssembler.h) = 99e46f9d9b26a8d9ba6b29c66d7ce5326c4ffeb6
+SHA1 (patch-Source_JavaScriptCore_assembler_MacroAssemblerARM.cpp) = f78e6150ed8901b3fe046b2ef182f50f1c7500a4
+SHA1 (patch-Source_JavaScriptCore_jit_ExecutableAllocator.cpp) = 2f20d6aa8f1ec4122bee9f2f95b736ee4496812f
+SHA1 (patch-Source_ThirdParty_gtest_include_gtest_internal_gtest-port.h) = f1eee7f9d3012edee1915234c837cff820f97092
+SHA1 (patch-Source_WTF_wtf_MathExtras.h) = 01195978abe07154fbc28de9efc47b3f3105fd89
+SHA1 (patch-Source_WTF_wtf_Platform.h) = 3253f20593d5a92869da74774609a57eb289148b
+SHA1 (patch-Source_WTF_wtf_ThreadSpecific.h) = 38a85e10a72fe38d286a2ce747e090a2955b8791
+SHA1 (patch-Source_WTF_wtf_dtoa_utils.h) = 192bb016ef584f26967de94d29ee5e43db6fb1f0
+SHA1 (patch-Source_WebCore_platform_FileSystem.cpp) = adef1a42c4e210f0a3dcb82807e2d2039684a0ec
+SHA1 (patch-Source_WebCore_rendering_shapes_RasterShape.cpp) = 551e47698dee50d097b11e3218f13bb3447edfea
+SHA1 (patch-Source_WebKit2_NetworkProcess_cache_NetworkCacheFileSystem.cpp) = 99192d0551e18f3373324d5be8bbeab00a2f79e8
+SHA1 (patch-Source_cmake_OptionsCommon.cmake) = 03b72552414e7114bfa7ddc2d68fd97009a5ff7d
+SHA1 (patch-Source_cmake_OptionsGTK.cmake) = 8eb8e9c2c9aeaed86cd95c61c86e0f3786385ac9
+SHA1 (patch-aj) = cd9a280c3bbab82c1a7aeb62a27ee6eb96c67ec2

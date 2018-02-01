@@ -1,0 +1,12 @@
+grep " used by "  /usr/pkgsrc/meta-pkgs/mate/Makefile.common | \
+	awk '{print $4}' | \
+	sed  "s;/Makefile;;" | \
+while read p
+do
+	if [ ! -d $(basename $p) ]
+	then
+		cp -rpf /usr/pkgsrc/$p .
+		echo $i done
+	fi
+	rm -vrf /usr/pkgsrc/$p
+done

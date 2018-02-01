@@ -1,0 +1,23 @@
+SAVE=/usr/pkgsrc.save
+set -e
+mkdir -p ${SAVE}
+for i in $*
+do
+	set $(cd $i;grep CATEGORIES Makefile*)
+	if [ $2 = "mate" ]
+	then
+		echo error on $i, missing categories
+		continue
+	fi
+	p=/usr/pkgsrc/$2/$i
+	if [ ! -L  $p ]
+	then
+		if [ -d $p ]
+		then
+			mv $p $SAVE
+		fi
+		ln -s ../mate/$i $p
+		echo $p done
+	fi
+	sed -i "/BUILDLINK_PKGSRCDIR/s/mate/$2/" $i/buildlink3.mk
+done

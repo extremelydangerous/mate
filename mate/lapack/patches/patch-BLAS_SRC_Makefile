@@ -1,0 +1,36 @@
+diff -up BLAS/SRC/Makefile.orig BLAS/SRC/Makefile
+--- BLAS/SRC/Makefile.orig	2017-06-17 19:46:53.000000000 -0300
++++ BLAS/SRC/Makefile	2018-01-30 03:26:39.837121479 -0200
+@@ -88,7 +88,7 @@ $(ZB1AUX): $(FRC)
+ #  Level 2 and Level 3 BLAS.  Comment it out only if you already have
+ #  both the Level 2 and 3 BLAS.
+ #---------------------------------------------------------------------
+-ALLBLAS = lsame.o xerbla.o xerbla_array.o
++ALLBLAS = lsame.o xerbla.o xerbla_array.o dummy_stack_protector.o
+ $(ALLBLAS): $(FRC)
+ 
+ #---------------------------------------------------------
+@@ -138,8 +138,8 @@ ALLOBJ = $(SBLAS1) $(SBLAS2) $(SBLAS3) $
+ 	$(ZBLAS2) $(ZBLAS3) $(ALLBLAS)
+ 
+ $(BLASLIB): $(ALLOBJ)
+-	$(ARCH) $(ARCHFLAGS) $@ $^
+-	$(RANLIB) $@
++	${LIBTOOL} --mode=link --tag=FC ${FC} ${LDFLAGS} -o libblas.la \
++	$(ALLOBJ:.o=.lo) -rpath ${PREFIX}/lib -version-info 4:0
+ 
+ single: $(SBLAS1) $(ALLBLAS) $(SBLAS2) $(SBLAS3)
+ 	$(ARCH) $(ARCHFLAGS) $(BLASLIB) $^
+@@ -167,4 +167,4 @@ cleanlib:
+ 	#rm -f $(BLASLIB)  # May point to a system lib, e.g. -lblas
+ 
+ .f.o:
+-	$(FORTRAN) $(OPTS) -c -o $@ $<
++	${LIBTOOL} --mode=compile --tag=FC ${FC} ${FFLAGS} -c -o $@ $<
+--- /dev/null	2018-01-30 03:20:07.329182589 -0200
++++ BLAS/SRC/dummy_stack_protector.c	2018-01-30 03:15:27.993949143 -0200
+@@ -0,0 +1,4 @@
++void __stack_chk_fail_local() {
++};
++
++void __stack_chk_fail_local() __attribute__((weak));

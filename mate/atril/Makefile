@@ -1,0 +1,31 @@
+# $NetBSD: Makefile,v 1.19 2018/01/10 22:16:25 wiz Exp $
+
+.include "../../mate/mate/Makefile.common"
+
+DISTNAME=	atril-${VERSION}
+PKGREVISION=	7
+CATEGORIES?=	print mate
+
+COMMENT=	Simple multi-page document viewer for the MATE environment
+
+USE_LANGUAGES=	c c++
+
+PKGCONFIG_OVERRIDE+=	atril-document.pc.in
+PKGCONFIG_OVERRIDE+=	atril-view.pc.in
+
+CONFIGURE_ARGS+=	--disable-introspection
+
+.include "options.mk"
+
+.include "../../devel/glib2/schemas.mk"
+
+.include "../../mate/caja/buildlink3.mk"
+.include "../../mate/mate-desktop/buildlink3.mk"
+.include "../../devel/zlib/buildlink3.mk"
+.include "../../graphics/hicolor-icon-theme/buildlink3.mk"
+.include "../../print/poppler-glib/buildlink3.mk"
+.include "../../textproc/libxml2/buildlink3.mk"
+.include "../../security/libsecret/buildlink3.mk"
+.include "../../security/openssl/buildlink3.mk"
+.include "../../sysutils/desktop-file-utils/desktopdb.mk"
+.include "../../mk/bsd.pkg.mk"
