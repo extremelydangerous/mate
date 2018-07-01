@@ -1,6 +1,6 @@
-$NetBSD: distinfo,v 1.3 2017/06/23 17:05:52 youri Exp $
+$NetBSD$
 
-SHA1 (atril-1.18.0.tar.xz) = 5cbcd69733bd5ba23c10a60b2a2350171d95ddf6
-RMD160 (atril-1.18.0.tar.xz) = ce083ead29df0e72def3c59e08e8490ea3b0f74e
-SHA512 (atril-1.18.0.tar.xz) = 71e40faebfac08c60c90e7c919d2274976a5f03e6f9c6882fe81d4736152c14b1baf45da770f357030708d103203a4ffc47387c736c4df8737dfc5caf1fd466a
-Size (atril-1.18.0.tar.xz) = 1688144 bytes
+SHA1 (atril-1.19.3.tar.xz) = 7b4b2493e39020120bb710da6fc25af81591b82e
+RMD160 (atril-1.19.3.tar.xz) = b3c4cc1f344567a9fdb63b267a8891a33877e3bb
+SHA512 (atril-1.19.3.tar.xz) = 5b873cb19e754e02da9cf63a5a4bd47fa7bdf77ccfa2312dd4242a51b960f7539a5429207a83134a7e8bdd88ac0b29184631cd27824c5b1974b552b893610332
+Size (atril-1.19.3.tar.xz) = 1703144 bytes

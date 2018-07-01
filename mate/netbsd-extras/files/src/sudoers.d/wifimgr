@@ -1,1 +1,0 @@
-%operator ALL=(ALL) NOPASSWD: /usr/sbin/wpa_cli

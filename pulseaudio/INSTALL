@@ -1,7 +1,17 @@
 case ${STAGE} in
+PRE-INSTALL)
+if @PULSEAUDIO_SYSTEM@
+then
+	echo REMOVING ANY pulseaudio configuration becase of SYSTEM OPERATION
+	${RM} -f @LOCALBASE@/etc/xdg/autostart/pulseaudio.desktop \
+		@LOCALBASE@/etc/pulse/*
+else
+	echo PULSEAUDIO as USER
+fi
+;;
 POST-INSTALL)
 	echo creating HOME for pulse user
-	mkdir -p /var/run/pulse
-	chmod 1777 /var/run/pulse
+	${MKDIR} -m 1777 -p /var/run/pulse
+	chown -R pulse:pulse /var/run/pulse
 ;;
 esac

@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.2 2017/06/23 17:27:53 youri Exp $
+@comment $NetBSD$
 include/mate-sensors-applet/sensors-applet-plugin.h
 include/mate-sensors-applet/sensors-applet-sensor.h
 lib/libmate-sensors-applet-plugin.la
@@ -14,6 +14,7 @@ lib/mate-sensors-applet/plugins/libomnibook.la
 lib/mate-sensors-applet/plugins/libpmu-sys.la
 lib/mate-sensors-applet/plugins/libsmu-sys.la
 lib/mate-sensors-applet/plugins/libsonypi.la
+lib/mate-sensors-applet/plugins/libudisks2.la
 libexec/mate-sensors-applet
 share/dbus-1/services/org.mate.panel.applet.SensorsAppletFactory.service
 share/glib-2.0/schemas/org.mate.sensors-applet.gschema.xml
@@ -102,3 +103,4 @@ share/pixmaps/mate-sensors-applet/low-temp-icon.png
 share/pixmaps/mate-sensors-applet/normal-temp-icon.png
 share/pixmaps/mate-sensors-applet/very-high-temp-icon.png
 share/pixmaps/mate-sensors-applet/very-low-temp-icon.png
+@pkgdir share/examples/rc.d

@@ -1,5 +1,0 @@
-if [ -S /var/run/pulse/native ]
-then
-	export PULSE_SERVER=/var/run/pulse/native
-	export AUDIODRIVER=pulseaudio
-fi

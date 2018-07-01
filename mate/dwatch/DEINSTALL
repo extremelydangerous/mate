@@ -1,8 +1,0 @@
-t=/tmp/$$
-case ${STAGE} in
-DEINSTALL)
-	crontab -l | sed -e "/dwatch/d" > $t
-	(cat $t) | crontab -
-;;
-esac
-rm -f $t

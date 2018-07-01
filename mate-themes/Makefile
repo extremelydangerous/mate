@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	mate-themes-3.22.12
-CATEGORIES=	mate
+CATEGORIES?=		graphics mate
 MASTER_SITES=	http://pub.mate-desktop.org/releases/themes/3.22/
 
 COMMENT=	Icons and themes for MATE desktop

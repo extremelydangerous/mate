@@ -15,8 +15,8 @@ BUILDLINK_TREE+=	pavucontrol
 .if !defined(PAVUCONTROL_BUILDLINK3_MK)
 PAVUCONTROL_BUILDLINK3_MK:=
 
-BUILDLINK_API_DEPENDS.pavucontrol+=	pavucontrol>=3.0nb7
-BUILDLINK_PKGSRCDIR.pavucontrol?=	../../audio/pavucontrol
+BUILDLINK_API_DEPENDS.pavucontrol+=	pavucontrol>=3.0nb8
+BUILDLINK_PKGSRCDIR.pavucontrol?=	../../mate/pavucontrol
 
 # XXX
 # XXX Uncomment and keep only the buildlink3 lines below which are directly
@@ -24,12 +24,13 @@ BUILDLINK_PKGSRCDIR.pavucontrol?=	../../audio/pavucontrol
 # XXX provides a wrappered API or otherwise does not expose the APIs of the
 # XXX buildlink3 lines below to dependencies, remove them.
 # XXX
+.include "../../devel/glibmm/buildlink3.mk"
+.include "../../x11/gtkmm3/buildlink3.mk"
 .include "../../audio/libcanberra/buildlink3.mk"
-.include "../../mate/pulseaudio/buildlink3.mk"
+.include "../../audio/pulseaudio/buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/libsigc++/buildlink3.mk"
 .include "../../x11/gtk3/buildlink3.mk"
-.include "../../x11/gtkmm3/buildlink3.mk"
 .endif	# PAVUCONTROL_BUILDLINK3_MK
 
 BUILDLINK_TREE+=	-pavucontrol

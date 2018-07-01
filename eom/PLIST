@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.2 2017/06/23 17:10:44 youri Exp $
+@comment $NetBSD$
 bin/eom
 include/eom-2.20/eom/eom-application.h
 include/eom-2.20/eom/eom-clipboard-handler.h
@@ -62,7 +62,6 @@ share/gir-1.0/Eom-1.0.gir
 share/glib-2.0/schemas/org.mate.eom.enums.xml
 share/glib-2.0/schemas/org.mate.eom.gschema.xml
 share/gtk-doc/html/eom/EomDialog.html
-share/gtk-doc/html/eom/EomExifDetails.html
 share/gtk-doc/html/eom/EomFileChooser.html
 share/gtk-doc/html/eom/EomImageSaveInfo.html
 share/gtk-doc/html/eom/EomMetadataReaderJpg.html
@@ -81,6 +80,7 @@ share/gtk-doc/html/eom/ch04.html
 share/gtk-doc/html/eom/ch05.html
 share/gtk-doc/html/eom/ch06.html
 share/gtk-doc/html/eom/ch07.html
+share/gtk-doc/html/eom/eom-EomExifDetails.html
 share/gtk-doc/html/eom/eom-eom-application.html
 share/gtk-doc/html/eom/eom-eom-clipboard-handler.html
 share/gtk-doc/html/eom/eom-eom-config-keys.html
@@ -354,3 +354,4 @@ share/locale/zh_CN/LC_MESSAGES/eom.mo
 share/locale/zh_HK/LC_MESSAGES/eom.mo
 share/locale/zh_TW/LC_MESSAGES/eom.mo
 share/locale/zu/LC_MESSAGES/eom.mo
+@pkgdir share/examples/rc.d

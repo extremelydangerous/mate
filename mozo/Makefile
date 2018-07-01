@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	mozo-${VERSION}
-CATEGORIES=	mate
+CATEGORIES?=		x11 mate
 
 COMMENT=	Menu editor for MATE
 

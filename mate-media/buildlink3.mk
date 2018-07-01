@@ -16,7 +16,7 @@ BUILDLINK_TREE+=	mate-media
 MATE_MEDIA_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.mate-media+=	mate-media>=1.18.1nb2
-BUILDLINK_PKGSRCDIR.mate-media?=	../../mate/mate-media
+BUILDLINK_PKGSRCDIR.multimedia-media?=	../../multimedia/mate-media
 
 # XXX
 # XXX Uncomment and keep only the buildlink3 lines below which are directly

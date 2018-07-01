@@ -16,7 +16,7 @@ BUILDLINK_TREE+=	paman
 PAMAN_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.paman+=	paman>=0.9.4nb37
-BUILDLINK_PKGSRCDIR.paman?=	../../mate/paman
+BUILDLINK_PKGSRCDIR.paman?=	../../audio/paman
 
 # XXX
 # XXX Uncomment and keep only the buildlink3 lines below which are directly

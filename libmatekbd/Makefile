@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	libmatekbd-${VERSION:R}.2
-CATEGORIES=	mate
+DISTNAME=	libmatekbd-${VERSION:R}.1
+CATEGORIES?=		x11 mate
 
 COMMENT=	MATE keyboard configuration library
 

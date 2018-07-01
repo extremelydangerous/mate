@@ -1,8 +1,8 @@
 # $NetBSD: Makefile,v 1.85 2016/08/03 10:22:37 adam Exp $
 
 DISTNAME=	glade-2.12.2
-PKGREVISION=	1
-CATEGORIES=	mate
+PKGREVISION=	25
+CATEGORIES?=		devel mate
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/glade/2.12/}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -22,9 +22,9 @@ USE_PKGLOCALEDIR=	YES
 CONFIGURE_ARGS+=	--disable-gnome-db
 CONFIGURE_ARGS+=	--enable-gnome
 
-.include "../../devel/libgnomeui/buildlink3.mk"
+.include "../../mate/libgnomeui/buildlink3.mk"
 .include "../../graphics/libgnomecanvas/buildlink3.mk"
-.include "../../devel/libbonoboui/buildlink3.mk"
+.include "../../mate/libbonoboui/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 #.include "../../textproc/libxml2/buildlink3.mk"
 .include "../../mk/omf-scrollkeeper.mk"

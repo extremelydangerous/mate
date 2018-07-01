@@ -24,6 +24,7 @@ BUILDLINK_PKGSRCDIR.pavumeter?=	../../audio/pavumeter
 # XXX provides a wrappered API or otherwise does not expose the APIs of the
 # XXX buildlink3 lines below to dependencies, remove them.
 # XXX
+.include "../../devel/glibmm/buildlink3.mk"
 .include "../../audio/libcanberra/buildlink3.mk"
 .include "../../mate/pulseaudio/buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"

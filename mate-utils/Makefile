@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-utils-${VERSION:R}.2
-CATEGORIES=	mate
+DISTNAME=	mate-utils-${VERSION:R}.1
+CATEGORIES?=		misc mate
 
 COMMENT=	Utiltiles for MATE Desktop
 

@@ -4,8 +4,8 @@ PYTHON_VERSIONS_ACCEPTED=	27
 PKGREVISION= 3
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-applets-${VERSION:R}.1
-CATEGORIES=	mate
+DISTNAME=	mate-applets-${VERSION:R}.4
+CATEGORIES?=		x11 mate
 
 COMMENT=	MATE panel applets
 
@@ -33,30 +33,26 @@ PLIST.batt=	yes
 
 .include "options.mk"
 
-.include "../../devel/glib2/schemas.mk"
 
 REPLACE_PYTHON+=	invest-applet/invest/chart.py
 REPLACE_PYTHON+=	invest-applet/invest/invest-applet.py
 REPLACE_PYTHON+=	invest-applet/invest/mate-invest-chart
-.include "../../lang/python/application.mk"
 
 .include "../../mate/mate-panel/buildlink3.mk"
-.include "../../mate/mate-desktop/buildlink3.mk"
 .include "../../mate/mate-settings-daemon/buildlink3.mk"
 .include "../../mate/libmateweather/buildlink3.mk"
 .include "../../devel/glib2/buildlink3.mk"
 .include "../../devel/libglade/buildlink3.mk"
-.include "../../devel/libwnck3/buildlink3.mk"
 .include "../../devel/py-gobject3/buildlink3.mk"
 .include "../../fonts/gucharmap/buildlink3.mk"
 .include "../../graphics/hicolor-icon-theme/buildlink3.mk"
 .include "../../textproc/libxml2/buildlink3.mk"
-.include "../../sysutils/dbus/buildlink3.mk"
-.include "../../sysutils/dbus-glib/buildlink3.mk"
 .include "../../sysutils/libgtop/buildlink3.mk"
 .include "../../sysutils/libnotify/buildlink3.mk"
 .include "../../x11/gtksourceview3/buildlink3.mk"
 .include "../../mate/libxklavier/buildlink3.mk"
 PY_PATCHPLIST=	yes
 .include "../../lang/python/extension.mk"
+.include "../../devel/glib2/schemas.mk"
+.include "../../lang/python/application.mk"
 .include "../../mk/bsd.pkg.mk"

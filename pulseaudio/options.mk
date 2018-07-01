@@ -1,20 +1,11 @@
 # $NetBSD: options.mk,v 1.6 2016/08/06 15:56:50 richard Exp $
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.pulseaudio
-PKG_SUPPORTED_OPTIONS=	avahi fftw x11
-PKG_SUGGESTED_OPTIONS=	avahi x11
+PKG_SUPPORTED_OPTIONS=	fftw x11 jack system
+PKG_SUGGESTED_OPTIONS=	x11 system fftw
 PLIST_VARS+=		${PKG_SUPPORTED_OPTIONS}
-.include "../../mk/bsd.options.mk"
 
-###
-### avahi
-###
-.if !empty(PKG_OPTIONS:Mavahi)
-.include "../../net/avahi/buildlink3.mk"
-PLIST.avahi=		yes
-.else
-CONFIGURE_ARGS+=	--disable-avahi
-.endif
+.include "../../mk/bsd.options.mk"
 
 ###
 ### fftw
@@ -39,18 +30,34 @@ CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 ###
+### jack
+###
+.if !empty(PKG_OPTIONS:Mjack)
+.include "../../audio/jack/buildlink3.mk"
+PLIST_SRC+=	PLIST PLIST.jack
+.endif
+###
 ### X11
 ###
 .if !empty(PKG_OPTIONS:Mx11)
-.include "../../x11/libICE/buildlink3.mk"
-.include "../../x11/libSM/buildlink3.mk"
-.include "../../x11/libX11/buildlink3.mk"
-.include "../../x11/libXtst/buildlink3.mk"
-.include "../../x11/xextproto/buildlink3.mk"
-.include "../../audio/jack/buildlink3.mk"
-.include "../../mate/netbsd-extras/buildlink3.mk"
 PLIST.x11=		yes
-PLIST_SRC+=	PLIST PLIST.jack
 .else
 CONFIGURE_ARGS+=	--disable-x11
 .endif
+
+
+.if !empty(PKG_OPTIONS:Msystem)
+RCD_SCRIPTS=	pulseaudio
+FILES_SUBST+=  PULSEAUDIO_SYSTEM="true"
+post-install:
+	${CP}	files/conf/*.pa files/conf/*.conf ${DESTDIR}${EGDIR}
+	${RM}	-f \
+		${DESTDIR}${LOCALBASE}/man/man1/pax11publish.1 \
+		${DESTDIR}${LOCALBASE}/man/man1/start-pulseaudio-x11.1
+	echo INSTALLING PULSEAUDIO as SYSTEM
+.else
+FILES_SUBST+=  PULSEAUDIO_SYSTEM="false"
+CONF_FILES+=	${EGDIR}/pulseaudio.desktop ${PKG_SYSCONFBASE}/xdg/autostart/pulseaudio.desktop
+.endif
+
+CONFIGURE_ARGS+=	--disable-avahi

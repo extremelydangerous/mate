@@ -15,7 +15,7 @@ BUILDLINK_TREE+=	libmatemixer
 .if !defined(LIBMATEMIXER_BUILDLINK3_MK)
 LIBMATEMIXER_BUILDLINK3_MK:=
 
-BUILDLINK_API_DEPENDS.libmatemixer+=	libmatemixer>=1.18.0nb1
+BUILDLINK_API_DEPENDS.libmatemixer+=	libmatemixer>=1.19.0nb1
 BUILDLINK_PKGSRCDIR.libmatemixer?=	../../mate/libmatemixer
 
 # XXX

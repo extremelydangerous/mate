@@ -3,7 +3,7 @@
 
 DISTNAME=	pavumeter-0.9.3
 PKGREVISION=	44
-CATEGORIES=	audio
+CATEGORIES?=		audio mate
 MASTER_SITES=	http://0pointer.de/lennart/projects/pavumeter/
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
@@ -17,6 +17,7 @@ USE_TOOLS+=	pkg-config gmake intltool perl
 
 CONFIGURE_ARGS+=	--disable-lynx
 
+.include "../../devel/glibmm/buildlink3.mk"
 .include "../../audio/libcanberra/buildlink3.mk"
 .include "../../audio/pulseaudio/buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"

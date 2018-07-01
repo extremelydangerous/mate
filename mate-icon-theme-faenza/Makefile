@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-icon-theme-faenza-${VERSION:R}.1
-CATEGORIES=	mate
+DISTNAME=	mate-icon-theme-faenza-${VERSION:R}.0
+CATEGORIES?=		graphics mate
 
 COMMENT=	Faenza and Faience icon themes for MATE desktop
 

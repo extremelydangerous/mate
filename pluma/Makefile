@@ -7,9 +7,9 @@
 .include "../../devel/libpeas/buildlink3.mk"
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	pluma-${VERSION:R}.2
+DISTNAME=	pluma-${VERSION:R}.3
 PKGREVISION=	2
-CATEGORIES=	mate
+CATEGORIES?=		editors mate
 
 COMMENT=	Small and lightweight UTF-8 text editor for the MATE
 
@@ -26,6 +26,7 @@ REPLACE_BASH+=		plugins/externaltools/data/search-recursive.tool.in
 
 .include "options.mk"
 
+.include "../../mate/gnome-vfs/buildlink3.mk"
 .include "../../devel/glib2/schemas.mk"
 .include "../../lang/python/application.mk"
 .include "../../mate/mate-desktop/buildlink3.mk"

@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	caja-dropbox-${VERSION}
-CATEGORIES=	mate
+CATEGORIES?=		sysutils mate
 
 COMMENT=	Dropbox Caja extension
 

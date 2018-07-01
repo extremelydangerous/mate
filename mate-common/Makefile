@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	mate-common-${VERSION}
-CATEGORIES=	mate
+CATEGORIES?=		devel mate
 
 COMMENT=	Sample files for MATE Application development
 

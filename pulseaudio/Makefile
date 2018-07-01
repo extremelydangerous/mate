@@ -1,7 +1,7 @@
 # $NetBSD: Makefile,v 1.121 2017/10/02 19:21:15 ryoon Exp $
 
 DISTNAME=	pulseaudio-11.1
-CATEGORIES=	mate audio
+CATEGORIES?=		audio mate
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 EXTRACT_SUFX=	.tar.xz
 
@@ -15,14 +15,17 @@ NOT_FOR_PLATFORM=	DragonFly-*-*
 LIBTOOL_REQD=	2.4
 GCC_REQD+=	4.8
 
+
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-USE_TOOLS+=	aclocal autoheader autoconf automake gmake gm4 intltool msgfmt pkg-config
+USE_TOOLS+=	aclocal autoheader autoconf automake gettext-m4 \
+		gmake gm4 intltool msgfmt pkg-config
 USE_LANGUAGES=	c c++
 
 REPLACE_BASH=	shell-completion/bash/pulseaudio git-version-gen
 
 .include "../../mk/bsd.prefs.mk"
+
 
 # Some tests are incompatible for NetBSD at least
 CONFIGURE_ARGS.NetBSD+=	--disable-default-build-tests
@@ -84,14 +87,6 @@ BUILD_DEFS+=		VARBASE PKG_SYSCONFBASE
 
 PKG_SYSCONFSUBDIR=	pulse
 EGDIR=		${PREFIX}/share/examples/pulseaudio
-CONF_FILES=	${EGDIR}/client.conf ${PKG_SYSCONFDIR}/client.conf
-CONF_FILES+=	${EGDIR}/daemon.conf ${PKG_SYSCONFDIR}/daemon.conf
-CONF_FILES+=	${EGDIR}/default.pa ${PKG_SYSCONFDIR}/default.pa
-CONF_FILES+=	${EGDIR}/system.pa ${PKG_SYSCONFDIR}/system.pa
-CONF_FILES+=	${EGDIR}/pulseaudio.desktop ${PKG_SYSCONFBASE}/xdg/autostart/pulseaudio.desktop
-CONF_FILES+=	${EGDIR}/pulseaudio-system.conf \
-		${PKG_SYSCONFBASE}/dbus-1/system.d/pulseaudio-system.conf
-
 PLIST_SUBST+=	PULSELIBVER=11.0
 
 PLIST_VARS+=		alsa bonjour coreaudio evdev oss sun
@@ -118,9 +113,27 @@ pre-configure:
 	set -e; cd ${WRKSRC}; \
 	aclocal; autoheader; automake -a --foreign -i; autoconf
 
+CONF_FILES=	${EGDIR}/client.conf ${PKG_SYSCONFDIR}/client.conf
+CONF_FILES+=	${EGDIR}/daemon.conf ${PKG_SYSCONFDIR}/daemon.conf
+CONF_FILES+=	${EGDIR}/default.pa ${PKG_SYSCONFDIR}/default.pa
+CONF_FILES+=	${EGDIR}/system.pa ${PKG_SYSCONFDIR}/system.pa
+CONF_FILES+=	${EGDIR}/pulseaudio-system.conf \
+		${PKG_SYSCONFBASE}/dbus-1/system.d/pulseaudio-system.conf
+#.if !empty(PKG_OPTIONS:Msystem)
+#RCD_SCRIPTS=	pulseaudio
+#FILES_SUBST+=  PULSEAUDIO_SYSTEM="true"
+#post-install:
+#	${CP}	files/conf/*.pa files/conf/*.conf ${DESTDIR}${EGDIR}
+#	echo INSTALLING PULSEAUDIO as SYSTEM
+#.else
+#FILES_SUBST+=  PULSEAUDIO_SYSTEM="false"
+#CONF_FILES+=	${EGDIR}/pulseaudio.desktop ${PKG_SYSCONFBASE}/xdg/autostart/pulseaudio.desktop
+#.endif
+
 .if ${OPSYS} != "Darwin"
 .include "../../sysutils/consolekit/buildlink3.mk"
 .endif
+.include "../../mk/pthread.buildlink3.mk"
 .include "../../audio/libsndfile/buildlink3.mk"
 .include "../../audio/speexdsp/buildlink3.mk"
 .include "../../databases/gdbm/buildlink3.mk"

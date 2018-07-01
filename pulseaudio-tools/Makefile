@@ -2,7 +2,7 @@
 #
 
 DISTNAME=	pulseaudio-tools-1.0
-CATEGORIES=	mate 
+CATEGORIES?=		meta-pkgs mate
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 

@@ -4,7 +4,7 @@ PKGREVISION= 2
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	mate-media-${VERSION:R}.1
-CATEGORIES=	mate
+CATEGORIES?=		multimedia mate
 
 COMMENT=	MATE media tools for MATE Desktop
 LICENSE=	gnu-gpl-v2 AND gnu-fdl-v1.1 AND gnu-lgpl-v2

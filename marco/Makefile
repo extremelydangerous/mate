@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	marco-${VERSION:R}.1
-CATEGORIES=	mate
+DISTNAME=	marco-${VERSION:R}.2
+CATEGORIES?=		wm mate
 
 COMMENT=	MATE Marco is a fork of GNOME Metacity
 

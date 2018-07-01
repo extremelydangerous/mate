@@ -1,6 +1,0 @@
-if [ $# = 0 ]
-then
-	echo use $0 dir
-	exit 1
-fi
-find $@ -type d -name CVS | xargs rm -vrf

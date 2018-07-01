@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-control-center-${VERSION:R}.2
-CATEGORIES=	mate
+DISTNAME=	mate-control-center-${VERSION:R}.3
+CATEGORIES?=		x11 mate
 
 COMMENT=	MATE Control Center
 
@@ -25,7 +25,7 @@ CONF_FILES+=	${PREFIX}/share/examples/${PKGBASE}/xdg/menus/matecc.menu \
 
 .include "../../devel/glib2/schemas.mk"
 
-.include "../../devel/libappindicator3/buildlink3.mk"
+.include "../../mate/libappindicator3/buildlink3.mk"
 .include "../../mate/libmatekbd/buildlink3.mk"
 .include "../../mate/mate-desktop/buildlink3.mk"
 .include "../../mate/mate-menus/buildlink3.mk"

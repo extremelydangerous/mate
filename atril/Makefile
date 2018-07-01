@@ -2,9 +2,9 @@
 
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	atril-${VERSION}
+DISTNAME=	atril-${VERSION:R}.3
 PKGREVISION=	7
-CATEGORIES=	mate
+CATEGORIES?=		print mate
 
 COMMENT=	Simple multi-page document viewer for the MATE environment
 

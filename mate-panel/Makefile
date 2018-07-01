@@ -4,8 +4,8 @@ PYTHON_VERSIONS_ACCEPTED=	27
 PKGREVISION= 3
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-panel-${VERSION:R}.3
-CATEGORIES=	mate
+DISTNAME=	mate-panel-${VERSION:R}.6
+CATEGORIES?=		x11 mate
 
 COMMENT=	MATE panel application
 
@@ -21,10 +21,10 @@ PYTHON_FOR_BUILD_ONLY=	yes
 
 .include "options.mk"
 
-.include "../../devel/glib2/schemas.mk"
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"
 .include "../../mate/libmateweather/buildlink3.mk"
 .include "../../mate/mate-desktop/buildlink3.mk"
+.include "../../mate/mate-settings-daemon/buildlink3.mk"
 .include "../../mate/mate-menus/buildlink3.mk"
 .include "../../audio/libcanberra/buildlink3.mk"
 .include "../../devel/dconf/buildlink3.mk"
@@ -33,4 +33,5 @@ PYTHON_FOR_BUILD_ONLY=	yes
 .include "../../graphics/librsvg/buildlink3.mk"
 .include "../../graphics/hicolor-icon-theme/buildlink3.mk"
 .include "../../sysutils/dbus-glib/buildlink3.mk"
+.include "../../devel/glib2/schemas.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-desktop-${VERSION}
-CATEGORIES=	mate
+DISTNAME=	mate-desktop-${VERSION:R}.3
+CATEGORIES?=		x11 mate
 
 COMMENT=	MATE desktop library
 

@@ -5,7 +5,7 @@ CONF=/usr/pkg/etc/cups/client.conf
 
 PRINTER=${1:-printer}
 
-if nc -z localhost ipp
+if nc -z localhost ipp > /dev/null 2>&1
 then
 	rm -f ${CONF}
 	exit 0
@@ -21,7 +21,7 @@ then
 	rm -f ${CONF}
 	exit 0
 fi
-if ! nc -z ${IP} ipp
+if ! nc -z ${IP} ipp > /dev/null 2>&1
 then
 	rm -f ${CONF}
 	exit 0

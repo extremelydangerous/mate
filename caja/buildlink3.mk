@@ -8,7 +8,7 @@ CAJA_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.caja+=	caja>=1.8.2
 BUILDLINK_ABI_DEPENDS.caja+=	caja>=1.14.1nb3
-BUILDLINK_PKGSRCDIR.caja?=	../../mate/caja
+BUILDLINK_PKGSRCDIR.caja?=	../../sysutils/caja
 
 .include "../../mate/mate-desktop/buildlink3.mk"
 .include "../../devel/exempi/buildlink3.mk"

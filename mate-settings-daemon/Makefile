@@ -3,8 +3,8 @@
 PKGREVISION= 2
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-settings-daemon-${VERSION:R}.1
-CATEGORIES=	mate
+DISTNAME=	mate-settings-daemon-${VERSION:R}.2
+CATEGORIES?=		x11 mate
 
 COMMENT=	MATE settings daemon
 
@@ -16,12 +16,20 @@ USE_LANGUAGES=		c c++
 
 .include "options.mk"
 
-INSTALL_MAKE_FLAGS+=	sysconfdir=${PREFIX}/share/examples/mate-settings-daemon
+
+EGDIR=			${PREFIX}/share/examples/mate-settings-daemon
+
+INSTALL_MAKE_FLAGS+=	sysconfdir=${EGDIR}
 
 MAKE_DIRS+=	${PKG_SYSCONFDIR}/xdg/autostart
+MAKE_DIRS+=	${PKG_SYSCONFDIR}/xrdb
 OWN_DIRS+=	${PKG_SYSCONFDIR}/mate-settings-daemon/xrandr
-CONF_FILES+=	${PREFIX}/share/examples/mate-settings-daemon/xdg/autostart/mate-settings-daemon.desktop \
+CONF_FILES+=	${EGDIR}/xdg/autostart/mate-settings-daemon.desktop \
 		${PKG_SYSCONFDIR}/xdg/autostart/mate-settings-daemon.desktop
+.for f in xrdb/Editres.ad xrdb/Emacs.ad xrdb/General.ad \
+	xrdb/Motif.ad xrdb/Tk.ad xrdb/Xaw.ad
+CONF_FILES+=	${EGDIR}/$f ${PKG_SYSCONFDIR}/$f
+.endfor
 
 .include "../../devel/glib2/schemas.mk"
 .include "../../graphics/hicolor-icon-theme/buildlink3.mk"
@@ -34,7 +42,7 @@ CONF_FILES+=	${PREFIX}/share/examples/mate-settings-daemon/xdg/autostart/mate-se
 .include "../../fonts/fontconfig/buildlink3.mk"
 .include "../../sysutils/dbus-glib/buildlink3.mk"
 .include "../../sysutils/libnotify/buildlink3.mk"
-.include "../../x11/kbproto/buildlink3.mk"
+#.include "../../x11/kbproto/buildlink3.mk"
 .include "../../mate/libxklavier/buildlink3.mk"
 .include "../../mate/libmatemixer/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

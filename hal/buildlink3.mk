@@ -7,7 +7,7 @@ HAL_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.hal+=	hal>=0.5.11
 BUILDLINK_ABI_DEPENDS.hal+=	hal>=0.5.14nb8
-BUILDLINK_PKGSRCDIR.hal?=	../../mate/hal
+BUILDLINK_PKGSRCDIR.hal?=	../../sysutils/hal
 
 .include "../../sysutils/dbus/buildlink3.mk"
 .include "../../sysutils/dbus-glib/buildlink3.mk"

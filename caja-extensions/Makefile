@@ -3,8 +3,8 @@
 PKGREVISION= 3
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	caja-extensions-${VERSION:R}.1
-CATEGORIES=	mate
+DISTNAME=	caja-extensions-${VERSION}
+CATEGORIES?=		sysutils mate
 
 COMMENT=	Set of extensions for Caja
 

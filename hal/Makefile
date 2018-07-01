@@ -2,7 +2,7 @@
 
 DISTNAME=		hal-0.5.14
 PKGREVISION=		18
-CATEGORIES=	mate
+CATEGORIES?=		sysutils mate
 MASTER_SITES=		http://hal.freedesktop.org/releases/
 EXTRACT_SUFX=		.tar.bz2
 

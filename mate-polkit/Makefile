@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-polkit-${VERSION:R}.1
-CATEGORIES=	mate
+DISTNAME=	mate-polkit-${VERSION:R}.0
+CATEGORIES?=		security mate
 
 COMMENT=	MATE desktop environment Authentication Agent for PolicyKit
 LICENSE=	gnu-lgpl-v2

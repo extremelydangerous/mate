@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-sensors-applet-${VERSION:R}.2
-CATEGORIES=	mate
+DISTNAME=	mate-sensors-applet-${VERSION:R}.1
+CATEGORIES?=		sysutils mate
 
 COMMENT=	MATE Sensors applets
 

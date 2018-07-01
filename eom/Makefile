@@ -8,8 +8,8 @@ PKGREVISION= 1
 .include "../../devel/libpeas/buildlink3.mk"
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	eom-${VERSION:R}.2
-CATEGORIES=	mate
+DISTNAME=	eom-${VERSION:R}.1
+CATEGORIES?=		graphics mate
 
 COMMENT=	Eye of MATE: an image viewing and cataloging program
 

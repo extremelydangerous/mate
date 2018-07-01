@@ -8,7 +8,7 @@ LIBMATEKBD_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.libmatekbd+=	libmatekbd>=1.8.0
 BUILDLINK_ABI_DEPENDS.libmatekbd+=	libmatekbd>=1.14.1nb3
-BUILDLINK_PKGSRCDIR.libmatekbd?=	../../mate/libmatekbd
+BUILDLINK_PKGSRCDIR.libx11kbd?=	../../x11/libmatekbd
 
 .include "../../mate/libxklavier/buildlink3.mk"
 .endif	# LIBMATEKBD_BUILDLINK3_MK

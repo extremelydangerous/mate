@@ -3,7 +3,7 @@
 
 DISTNAME=	gvfs-1.6.7
 PKGREVISION=	23
-CATEGORIES=	mate
+CATEGORIES?=	sysutils mate
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gvfs/1.6/}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -14,7 +14,7 @@ LICENSE=	gnu-lgpl-v2
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-USE_TOOLS+=	intltool gmake pkg-config msgfmt
+USE_TOOLS+=	intltool gmake msgfmt
 CONFIGURE_ARGS+=	--enable-http
 CONFIGURE_ARGS+=	--disable-bash-completion
 
@@ -87,7 +87,3 @@ BUILDLINK_API_DEPENDS.libsoup+=	libsoup>=2.26.0
 .include "../../filesystems/fuse/buildlink3.mk"
 .include "../../mate/gnome-mount/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
-
-cvs:
-	cvs up
-	cvs commit

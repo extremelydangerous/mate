@@ -8,7 +8,7 @@ MATE_POLKIT_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.mate-polkit+=	mate-polkit>=1.8.0
 BUILDLINK_ABI_DEPENDS.mate-polkit+=	mate-polkit>=1.14.0nb4
-BUILDLINK_PKGSRCDIR.mate-polkit?=	../../security/mate-polkit
+BUILDLINK_PKGSRCDIR.security-polkit?=	../../security/security-polkit
 
 .include "../../security/polkit/buildlink3.mk"
 .endif	# MATE_POLKIT_BUILDLINK3_MK

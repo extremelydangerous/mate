@@ -3,7 +3,7 @@
 
 DISTNAME=	gdm-2.20.11
 PKGREVISION=	1
-CATEGORIES=	mate
+CATEGORIES?=		x11 mate
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdm/2.20/}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -57,15 +57,6 @@ CONF_FILES_PERMS+=	${EGDIR}/${f} ${PKG_SYSCONFDIR}/${f} \
 			${REAL_ROOT_USER} ${REAL_ROOT_GROUP} 0755
 .endfor
 RCD_SCRIPTS=		gdm
-
-#.if ! empty(RCD_SCRIPTS)
-#RCDIR=	${PREFIX}/share/examples/rc.d
-#.for R in ${RCD_SCRIPTS}
-#
-#CONF_FILES_PERMS+=${RCDIR}/${R} /etc/rc.d/${R} \
-#	${REAL_ROOT_USER} ${REAL_ROOT_GROUP} 0755
-#.endfor
-#.endif
 
 CONF_FILES+=	${EGDIR}/etc/defaults/desktop /etc/defaults/desktop \
 		${EGDIR}/dconf.default ${PKG_SYSCONFDIR}/dconf.default \
@@ -147,6 +138,7 @@ PLIST.gdmopen=		yes
 .endif
 PRINT_PLIST_AWK+=	/gdmopen/ { print "$${GDMOPEN}" $$0; next }
 
+.include "../../mate/tightvnc/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../devel/glib2/buildlink3.mk"
 .include "../../devel/libglade/buildlink3.mk"
@@ -172,9 +164,4 @@ post-install:
 
 .include "../../mk/bsd.pkg.mk"
 
-cvs:
-	cvs up
-	cvs commit
-
-dorsync:
-	cd ..;sh dorsyncpackages gdm
+.include "../Makefile"

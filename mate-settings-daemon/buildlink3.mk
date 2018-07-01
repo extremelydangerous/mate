@@ -15,7 +15,7 @@ BUILDLINK_TREE+=	mate-settings-daemon
 .if !defined(MATE_SETTINGS_DAEMON_BUILDLINK3_MK)
 MATE_SETTINGS_DAEMON_BUILDLINK3_MK:=
 
-BUILDLINK_API_DEPENDS.mate-settings-daemon+=	mate-settings-daemon>=1.18.1nb2
+BUILDLINK_API_DEPENDS.mate-settings-daemon+=	mate-settings-daemon>=1.19.2nb2
 BUILDLINK_PKGSRCDIR.mate-settings-daemon?=	../../mate/mate-settings-daemon
 
 # XXX
@@ -32,7 +32,6 @@ BUILDLINK_PKGSRCDIR.mate-settings-daemon?=	../../mate/mate-settings-daemon
 .include "../../fonts/fontconfig/buildlink3.mk"
 .include "../../sysutils/dbus-glib/buildlink3.mk"
 .include "../../sysutils/libnotify/buildlink3.mk"
-.include "../../x11/kbproto/buildlink3.mk"
 .include "../../mate/libxklavier/buildlink3.mk"
 .include "../../mate/libmatemixer/buildlink3.mk"
 .include "../../x11/gtk3/buildlink3.mk"

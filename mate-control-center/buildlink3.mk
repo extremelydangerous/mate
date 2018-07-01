@@ -8,7 +8,7 @@ MATE_CONTROL_CENTER_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.mate-control-center+=	mate-control-center>=1.8.3
 BUILDLINK_ABI_DEPENDS.mate-control-center+=	mate-control-center>=1.14.0nb3
-BUILDLINK_PKGSRCDIR.mate-control-center?=	../../x11/mate-control-center
+BUILDLINK_PKGSRCDIR.mate-control-center?=	../../x11/x11-control-center
 
 .include "../../mate/mate-desktop/buildlink3.mk"
 .include "../../mate/mate-menus/buildlink3.mk"

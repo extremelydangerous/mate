@@ -16,7 +16,7 @@ BUILDLINK_TREE+=	glade
 GLADE_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.glade+=	glade>=2.12.2nb25
-BUILDLINK_PKGSRCDIR.glade?=	../../mate/glade
+BUILDLINK_PKGSRCDIR.glade?=	../../devel/glade
 
 # XXX
 # XXX Uncomment and keep only the buildlink3 lines below which are directly
@@ -24,10 +24,11 @@ BUILDLINK_PKGSRCDIR.glade?=	../../mate/glade
 # XXX provides a wrappered API or otherwise does not expose the APIs of the
 # XXX buildlink3 lines below to dependencies, remove them.
 # XXX
-.include "../../devel/libgnomeui/buildlink3.mk"
+.include "../../mate/libgnomeui/buildlink3.mk"
 .include "../../graphics/libgnomecanvas/buildlink3.mk"
-.include "../../devel/libbonoboui/buildlink3.mk"
+.include "../../mate/libbonoboui/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
+.include "../../devel/libglade/buildlink3.mk"
 .include "../../textproc/libxml2/buildlink3.mk"
 .include "../../x11/gtk2/buildlink3.mk"
 .endif	# GLADE_BUILDLINK3_MK

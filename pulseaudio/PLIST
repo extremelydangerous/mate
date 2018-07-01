@@ -9,10 +9,8 @@ bin/paplay
 bin/parec
 bin/parecord
 bin/pasuspender
-${PLIST.x11}bin/pax11publish
 bin/pulseaudio
 ${PLIST.fftw}bin/qpaeq
-${PLIST.x11}bin/start-pulseaudio-x11
 include/pulse/cdecl.h
 include/pulse/channelmap.h
 include/pulse/context.h
@@ -55,8 +53,6 @@ lib/pkgconfig/libpulse-simple.pc
 lib/pkgconfig/libpulse.pc
 ${PLIST.alsa}lib/pulse-${PULSELIBVER}/modules/libalsa-util.a
 ${PLIST.alsa}lib/pulse-${PULSELIBVER}/modules/libalsa-util.so
-${PLIST.avahi}lib/pulse-${PULSELIBVER}/modules/libavahi-wrap.a
-${PLIST.avahi}lib/pulse-${PULSELIBVER}/modules/libavahi-wrap.so
 lib/pulse-${PULSELIBVER}/modules/libcli.a
 lib/pulse-${PULSELIBVER}/modules/libcli.so
 ${PLIST.oss}lib/pulse-${PULSELIBVER}/modules/liboss-util.a
@@ -167,8 +163,6 @@ lib/pulse-${PULSELIBVER}/modules/module-pipe-source.a
 lib/pulse-${PULSELIBVER}/modules/module-pipe-source.so
 lib/pulse-${PULSELIBVER}/modules/module-position-event-sounds.a
 lib/pulse-${PULSELIBVER}/modules/module-position-event-sounds.so
-${PLIST.avahi}lib/pulse-${PULSELIBVER}/modules/module-raop-discover.a
-${PLIST.avahi}lib/pulse-${PULSELIBVER}/modules/module-raop-discover.so
 lib/pulse-${PULSELIBVER}/modules/module-raop-sink.a
 lib/pulse-${PULSELIBVER}/modules/module-raop-sink.so
 lib/pulse-${PULSELIBVER}/modules/module-remap-sink.a
@@ -221,18 +215,6 @@ lib/pulse-${PULSELIBVER}/modules/module-virtual-surround-sink.a
 lib/pulse-${PULSELIBVER}/modules/module-virtual-surround-sink.so
 lib/pulse-${PULSELIBVER}/modules/module-volume-restore.a
 lib/pulse-${PULSELIBVER}/modules/module-volume-restore.so
-${PLIST.x11}lib/pulse-${PULSELIBVER}/modules/module-x11-bell.a
-${PLIST.x11}lib/pulse-${PULSELIBVER}/modules/module-x11-bell.so
-${PLIST.x11}lib/pulse-${PULSELIBVER}/modules/module-x11-cork-request.a
-${PLIST.x11}lib/pulse-${PULSELIBVER}/modules/module-x11-cork-request.so
-${PLIST.x11}lib/pulse-${PULSELIBVER}/modules/module-x11-publish.a
-${PLIST.x11}lib/pulse-${PULSELIBVER}/modules/module-x11-publish.so
-${PLIST.x11}lib/pulse-${PULSELIBVER}/modules/module-x11-xsmp.a
-${PLIST.x11}lib/pulse-${PULSELIBVER}/modules/module-x11-xsmp.so
-${PLIST.avahi}lib/pulse-${PULSELIBVER}/modules/module-zeroconf-discover.a
-${PLIST.avahi}lib/pulse-${PULSELIBVER}/modules/module-zeroconf-discover.so
-${PLIST.avahi}lib/pulse-${PULSELIBVER}/modules/module-zeroconf-publish.a
-${PLIST.avahi}lib/pulse-${PULSELIBVER}/modules/module-zeroconf-publish.so
 lib/pulseaudio/libpulsecommon-${PULSELIBVER}.la
 lib/pulseaudio/libpulsecore-${PULSELIBVER}.la
 ${PLIST.oss}lib/pulseaudio/libpulsedsp.la
@@ -246,9 +228,7 @@ man/man1/paplay.1
 man/man1/parec.1
 man/man1/parecord.1
 man/man1/pasuspender.1
-man/man1/pax11publish.1
 man/man1/pulseaudio.1
-man/man1/start-pulseaudio-x11.1
 man/man5/default.pa.5
 man/man5/pulse-cli-syntax.5
 man/man5/pulse-client.conf.5
@@ -266,7 +246,6 @@ share/examples/pulseaudio/client.conf
 share/examples/pulseaudio/daemon.conf
 share/examples/pulseaudio/default.pa
 share/examples/pulseaudio/pulseaudio-system.conf
-${PLIST.x11}share/examples/pulseaudio/pulseaudio.desktop
 share/examples/pulseaudio/system.pa
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/be/LC_MESSAGES/pulseaudio.mo

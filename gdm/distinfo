@@ -7,6 +7,7 @@ Size (gdm-2.20.11.tar.bz2) = 4013059 bytes
 SHA1 (patch-common_gdm-config.h) = 741872b9cd10aa298a192bb2cdde40f8de7d5cf2
 SHA1 (patch-config_Makefile.in) = 625c9d51068f6ef95b8296eb21de18690b31f077
 SHA1 (patch-config_PostSession.in) = 382da6b4a918ff4a0e15cd28935a9bbbba7405bf
+SHA1 (patch-config_gdm.conf.in) = c6e8cd55acfad9a7166a673d62a8dda7f9537a13
 SHA1 (patch-configure) = 4c8f33f063ce7ec50d5d99092dbfdcaabc3d0025
 SHA1 (patch-daemon_fstype.c) = 08e04ed5eab99326c1a64c1c303fee56c14df540
 SHA1 (patch-daemon_gdm-daemon-config.c) = 3fc8089179cb5ee73f72a55ff5b9e3f0c16c0e2b

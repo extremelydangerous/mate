@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.2 2017/06/23 17:12:57 youri Exp $
+@comment $NetBSD$
 include/libmateweather/location-entry.h
 include/libmateweather/mateweather-enum-types.h
 include/libmateweather/mateweather-location.h
@@ -21,7 +21,6 @@ share/gtk-doc/html/libmateweather/home.png
 share/gtk-doc/html/libmateweather/index.html
 share/gtk-doc/html/libmateweather/left-insensitive.png
 share/gtk-doc/html/libmateweather/left.png
-share/gtk-doc/html/libmateweather/libmateweather-mateweather-mateconf.html
 share/gtk-doc/html/libmateweather/libmateweather-mateweather-prefs.html
 share/gtk-doc/html/libmateweather/libmateweather-mateweather-xml.html
 share/gtk-doc/html/libmateweather/libmateweather-weather.html
@@ -579,3 +578,4 @@ share/locale/xh/LC_MESSAGES/libmateweather.mo
 share/locale/zh_CN/LC_MESSAGES/libmateweather.mo
 share/locale/zh_HK/LC_MESSAGES/libmateweather.mo
 share/locale/zh_TW/LC_MESSAGES/libmateweather.mo
+@pkgdir share/examples/rc.d

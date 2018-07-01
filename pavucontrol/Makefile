@@ -3,7 +3,7 @@
 
 DISTNAME=	pavucontrol-3.0
 PKGREVISION=	8
-CATEGORIES=	audio
+CATEGORIES?=		audio mate
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/pavucontrol/
 EXTRACT_SUFX=	.tar.xz
 
@@ -18,11 +18,12 @@ USE_TOOLS+=	pkg-config gmake intltool perl msgfmt
 
 CONFIGURE_ARGS+=	--disable-lynx
 
+.include "../../devel/glibmm/buildlink3.mk"
+.include "../../x11/gtkmm3/buildlink3.mk"
 .include "../../audio/libcanberra/buildlink3.mk"
 .include "../../audio/pulseaudio/buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/libsigc++/buildlink3.mk"
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"
 .include "../../x11/gtk3/buildlink3.mk"
-.include "../../x11/gtkmm3/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -1,7 +1,0 @@
-case ${STAGE} in
-POST-INSTALL)
-	echo creating HOME for pulse user
-	mkdir -p /var/run/pulse
-	chmod 1777 /var/run/pulse
-;;
-esac

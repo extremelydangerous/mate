@@ -14,7 +14,6 @@ LIBXKBFILE_BUILDLINK3_MK:=
 BUILDLINK_API_DEPENDS.libxkbfile+=	libxkbfile>=0.99.1
 BUILDLINK_PKGSRCDIR.libxkbfile?=	../../x11/libxkbfile
 
-.include "../../x11/kbproto/buildlink3.mk"
 .include "../../x11/libX11/buildlink3.mk"
 .  endif # LIBXKBFILE_BUILDLINK3_MK
 

@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	mate-menus-${VERSION}
-CATEGORIES=	mate
+CATEGORIES?=		x11 mate
 
 COMMENT=	Implementation of the desktop menu specification for MATE
 

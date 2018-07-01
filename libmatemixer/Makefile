@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	libmatemixer-${VERSION}
-CATEGORIES=	mate
+CATEGORIES?=		audio mate
 
 COMMENT=	MATE audio mixer
 
@@ -15,9 +15,7 @@ CONFIGURE_ARGS+=	--disable-null \
 
 .include "../../x11/gtk2/buildlink3.mk"
 .include "../../mate/pulseaudio/buildlink3.mk"
+.include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
 
-
-cvs:
-	cvs up
-	cvs commit
+.include "../Makefile"

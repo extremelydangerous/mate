@@ -16,7 +16,7 @@ BUILDLINK_TREE+=	py27-lztlib
 PY27_LZTLIB_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.py27-lztlib+=	py27-lztlib>=1.0
-BUILDLINK_PKGSRCDIR.py27-lztlib?=	../../mate/py-lztlib
+BUILDLINK_PKGSRCDIR.py27-lztlib?=	../../devel/py-lztlib
 .endif	# PY27_LZTLIB_BUILDLINK3_MK
 
 BUILDLINK_TREE+=	-py27-lztlib

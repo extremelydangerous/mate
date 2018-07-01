@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-session-manager-${VERSION}
-CATEGORIES=	mate
+DISTNAME=	mate-session-manager-${VERSION:R}.1
+CATEGORIES?=		x11 mate
 
 COMMENT=	MATE session manager
 

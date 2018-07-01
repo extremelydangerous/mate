@@ -1,6 +1,6 @@
 PKGNAME=	netbsd-extras-1.0
 PKGREVISION=	1
-CATEGORIES=	mate
+CATEGORIES=	x11 mate
 MASTER_SITES=
 DISTNAME=
 
@@ -41,3 +41,5 @@ do-extract:
 .include "../../print/cups-base/buildlink3.mk"
 .include "../../lang/python/application.mk"
 .include "../../mk/bsd.pkg.mk"
+
+.include "../Makefile"

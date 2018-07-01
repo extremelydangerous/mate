@@ -16,7 +16,7 @@ BUILDLINK_TREE+=	gvfs
 GVFS_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.gvfs+=	gvfs>=1.6.7nb23
-BUILDLINK_PKGSRCDIR.gvfs?=	../../mate/gvfs
+BUILDLINK_PKGSRCDIR.gvfs?=	../../sysutils/gvfs
 
 # XXX
 # XXX Uncomment and keep only the buildlink3 lines below which are directly
@@ -24,7 +24,9 @@ BUILDLINK_PKGSRCDIR.gvfs?=	../../mate/gvfs
 # XXX provides a wrappered API or otherwise does not expose the APIs of the
 # XXX buildlink3 lines below to dependencies, remove them.
 # XXX
+.if !empty(PKG_OPTIONS:Mavahi)
 .include "../../net/avahi/buildlink3.mk"
+.endif
 .include "../../net/samba/buildlink3.mk"
 .include "../../misc/libcdio-paranoia/buildlink3.mk"
 .include "../../mate/hal/buildlink3.mk"

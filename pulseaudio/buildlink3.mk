@@ -7,7 +7,7 @@ PULSEAUDIO_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.pulseaudio+=	pulseaudio>=11.0
 BUILDLINK_ABI_DEPENDS.pulseaudio+=	pulseaudio>=11.0
-BUILDLINK_PKGSRCDIR.pulseaudio?=	../../mate/pulseaudio
+BUILDLINK_PKGSRCDIR.pulseaudio?=	../../audio/pulseaudio
 
 .include "../../mk/bsd.fast.prefs.mk"
 
@@ -21,7 +21,7 @@ BUILDLINK_RPATHDIRS.pulseaudio+=	lib/pulseaudio
 _WRAP_EXTRA_ARGS.LIBTOOL+=	-L${PREFIX}/lib/pulseaudio
 
 pkgbase:= pulseaudio
-.  include "../../mk/pkg-build-options.mk"
+.include "../../mk/pkg-build-options.mk"
 
 .include "../../mk/bsd.fast.prefs.mk"
 
@@ -30,8 +30,9 @@ pkgbase:= pulseaudio
 .include "../../x11/libSM/buildlink3.mk"
 .include "../../x11/libX11/buildlink3.mk"
 .include "../../x11/libXtst/buildlink3.mk"
+.if !empty(PKG_OPTIONS:Mjack)
 .include "../../audio/jack/buildlink3.mk"
-.include "../../mate/netbsd-extras/buildlink3.mk"
+.endif
 .endif
 
 .include "../../audio/libsndfile/buildlink3.mk"

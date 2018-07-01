@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	mate-terminal-${VERSION:R}.1
-CATEGORIES=	mate
+CATEGORIES?=		x11 mate
 
 COMMENT=	MATE terminal emulator application
 

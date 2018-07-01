@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-power-manager-${VERSION}
-CATEGORIES=	mate
+DISTNAME=	mate-power-manager-${VERSION:R}.1
+CATEGORIES?=		sysutils mate
 
 COMMENT=	Power manager for MATE
 

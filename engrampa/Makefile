@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	engrampa-${VERSION:R}.2
-CATEGORIES=	mate
+CATEGORIES?=		archivers mate
 
 COMMENT=	Archive manager utility for the MATE Environment
 

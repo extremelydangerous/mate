@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-netbook-${VERSION:R}.1
-CATEGORIES=	mate
+DISTNAME=	mate-netbook-${VERSION:R}.0
+CATEGORIES?=		wm mate
 
 COMMENT=	Simple window management tool for MATE desktop
 

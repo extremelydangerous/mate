@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	caja-${VERSION:R}.3
-CATEGORIES=	mate
+CATEGORIES?=		sysutils mate
 MASTER_SITES+=	http://pub.mate-desktop.org/releases/${VERSION:R}/
 
 COMMENT=	File manager for the MATE desktop
@@ -15,9 +15,9 @@ PKGCONFIG_OVERRIDE+=	libcaja-extension/libcaja-extension.pc.in
 
 .include "options.mk"
 
-.include "../../devel/glib2/schemas.mk"
 
 .include "../../mate/mate-desktop/buildlink3.mk"
+.include "../../mate/gnome-vfs/buildlink3.mk"
 .include "../../devel/exempi/buildlink3.mk"
 .include "../../graphics/libexif/buildlink3.mk"
 .include "../../graphics/hicolor-icon-theme/buildlink3.mk"
@@ -26,4 +26,5 @@ PKGCONFIG_OVERRIDE+=	libcaja-extension/libcaja-extension.pc.in
 .include "../../databases/shared-mime-info/mimedb.mk"
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"
 .include "../../sysutils/libnotify/buildlink3.mk"
+.include "../../devel/glib2/schemas.mk"
 .include "../../mk/bsd.pkg.mk"

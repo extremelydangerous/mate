@@ -4,7 +4,7 @@ PKGREVISION= 3
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	libmateweather-${VERSION:R}.1
-CATEGORIES=	mate
+CATEGORIES?=		misc mate
 
 COMMENT=	Weather information access library
 

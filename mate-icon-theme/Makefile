@@ -3,8 +3,8 @@
 PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
-DISTNAME=	mate-icon-theme-${VERSION:R}.2
-CATEGORIES=	mate
+DISTNAME=	mate-icon-theme-${VERSION:R}.0
+CATEGORIES?=		graphics mate
 
 COMMENT=	Collection of icons used as the basis for MATE themes
 

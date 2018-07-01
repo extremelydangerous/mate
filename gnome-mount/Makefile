@@ -3,7 +3,7 @@
 
 DISTNAME=		gnome-mount-0.8
 PKGREVISION=		37
-CATEGORIES=	mate
+CATEGORIES?=		sysutils mate
 MASTER_SITES=		http://hal.freedesktop.org/releases/
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
@@ -29,6 +29,6 @@ post-extract:
 .include "../../sysutils/dbus-glib/buildlink3.mk"
 .include "../../mate/hal/buildlink3.mk"
 .include "../../sysutils/libnotify/buildlink3.mk"
-.include "../../sysutils/nautilus/buildlink3.mk"
+.include "../../mate/nautilus/buildlink3.mk"
 .include "../../x11/gtk2/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

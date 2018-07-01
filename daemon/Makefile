@@ -1,6 +1,6 @@
 DISTNAME=
 PKGNAME=	daemon-1.0
-CATEGORIES=	mate
+CATEGORIES=	sysutils lzt
 MASTER_SITES=
 
 MAINTAINER=	nervoso@k1.com.br

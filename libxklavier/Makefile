@@ -3,7 +3,7 @@
 
 DISTNAME=	libxklavier-5.4
 PKGREVISION=	2
-CATEGORIES=	mate
+CATEGORIES?=		x11 mate
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/libxklavier/libxklavier-5.4.tar.bz2/13af74dcb6011ecedf1e3ed122bd31fa/
 EXTRACT_SUFX=	.tar.bz2
 
@@ -41,6 +41,4 @@ BUILDLINK_API_DEPENDS.glib2+=	glib2>=2.6.0
 .include "../../x11/libxkbfile/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
 
-cvs:
-	cvs up
-	cvs commit
+.include "../Makefile"

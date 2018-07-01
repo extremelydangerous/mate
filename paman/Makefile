@@ -3,7 +3,7 @@
 
 DISTNAME=	paman-0.9.4
 PKGREVISION=	37
-CATEGORIES=	audio
+CATEGORIES?=		audio mate
 MASTER_SITES=	http://0pointer.de/lennart/projects/paman/
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
@@ -17,8 +17,8 @@ USE_TOOLS+=	pkg-config gmake
 
 CONFIGURE_ARGS+=	--disable-lynx
 
-.include "../../audio/pulseaudio/buildlink3.mk"
 .include "../../devel/glibmm/buildlink3.mk"
+.include "../../audio/pulseaudio/buildlink3.mk"
 .include "../../devel/libglademm/buildlink3.mk"
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"
 .include "../../mk/bsd.pkg.mk"

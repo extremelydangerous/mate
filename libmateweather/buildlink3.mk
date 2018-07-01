@@ -8,7 +8,7 @@ LIBMATEWEATHER_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.libmateweather+=	libmateweather>=1.8.0
 BUILDLINK_ABI_DEPENDS.libmateweather+=	libmateweather>=1.18.1nb3
-BUILDLINK_PKGSRCDIR.libmateweather?=	../../mate/libmateweather
+BUILDLINK_PKGSRCDIR.libmiscweather?=	../../misc/libmateweather
 
 .include "../../textproc/libxml2/buildlink3.mk"
 .include "../../net/libsoup/buildlink3.mk"

@@ -1,7 +1,7 @@
 # $NetBSD$
 
 DISTNAME=	dwatch-0.1.1
-CATEGORIES=	mate
+CATEGORIES=	sysutils mate
 MASTER_SITES=	http://siag.nu/pub/dwatch/
 
 MAINTAINER=	nervoso@k1.com.br
@@ -32,6 +32,4 @@ CONF_FILES+=	${LOCALBASE}/${EGDIR}/dwatch.conf ${PKG_SYSCONFDIR}
 
 .include "../../mk/bsd.pkg.mk"
 
-cvs:
-	cvs up
-	cvs commit
+.include "../Makefile"

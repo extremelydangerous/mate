@@ -24,6 +24,7 @@ BUILDLINK_PKGSRCDIR.netbsd-extras?=	../../mate/netbsd-extras
 # XXX provides a wrappered API or otherwise does not expose the APIs of the
 # XXX buildlink3 lines below to dependencies, remove them.
 # XXX
+.include "../../mate/py-lztlib/buildlink3.mk"
 .include "../../mate/daemon/buildlink3.mk"
 .include "../../print/cups-base/buildlink3.mk"
 .endif	# NETBSD_EXTRAS_BUILDLINK3_MK

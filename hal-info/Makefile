@@ -2,7 +2,7 @@
 
 DISTNAME=		hal-info-20091130
 PKGREVISION=		5
-CATEGORIES=	mate
+CATEGORIES?=		sysutils mate
 MASTER_SITES=		http://hal.freedesktop.org/releases/
 
 MAINTAINER=		pkgsrc-users@NetBSD.org

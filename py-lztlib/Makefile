@@ -1,6 +1,6 @@
 PKGNAME=	${PYPKGPREFIX}-lztlib-1.0
 DISTNAME=
-CATEGORIES=	mate
+CATEGORIES=	devel mate
 MASTER_SITES=
 
 MAINTAINER=	nervoso@k1.com.br
@@ -15,13 +15,11 @@ do-extract:
 DEPENDS+=       ${PYPKGPREFIX}-sqlite3>0:../../databases/py-sqlite3
 DEPENDS+=       ${PYPKGPREFIX}-psycopg2>0:../../databases/py-psycopg2
 DEPENDS+=       ${PYPKGPREFIX}-beautifulsoup4>0:../../www/py-beautifulsoup4
-DEPENDS+=       ${PYPKGPREFIX}-gnome2>0:../../x11/py-gnome2
+DEPENDS+=       ${PYPKGPREFIX}-gnome2>0:../../mate/py-gnome2
 DEPENDS+=       ${PYPKGPREFIX}-sysctl>0:../../devel/py-sysctl
 DEPENDS+=       glade>0:../../mate/glade
 
 .include "../../lang/python/distutils.mk"
 .include "../../mk/bsd.pkg.mk"
 
-cvs:
-	cvs up
-	cvs commit
+.include "../Makefile"

@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	mate-notification-daemon-${VERSION}
-CATEGORIES=	mate
+CATEGORIES?=		sysutils mate
 
 COMMENT=	Notification daemon for MATE desktop
 

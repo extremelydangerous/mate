@@ -8,7 +8,7 @@ MARCO_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.marco+=	marco>=1.8.2
 BUILDLINK_ABI_DEPENDS.marco+=	marco>=1.18.1nb1
-BUILDLINK_PKGSRCDIR.marco?=	../../mate/marco
+BUILDLINK_PKGSRCDIR.marco?=	../../wm/marco
 
 .include "../../audio/libcanberra/buildlink3.mk"
 .include "../../devel/pango/buildlink3.mk"

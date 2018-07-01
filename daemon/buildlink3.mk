@@ -16,7 +16,7 @@ BUILDLINK_TREE+=	daemon
 DAEMON_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.daemon+=	daemon>=1.0
-BUILDLINK_PKGSRCDIR.daemon?=	../../mate/daemon
+BUILDLINK_PKGSRCDIR.daemon?=	../../sysutils/daemon
 .endif	# DAEMON_BUILDLINK3_MK
 
 BUILDLINK_TREE+=	-daemon

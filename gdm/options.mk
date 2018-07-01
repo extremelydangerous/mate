@@ -2,12 +2,13 @@
 
 PKG_OPTIONS_VAR=	PKG_OPTIONS.gdm
 PKG_SUPPORTED_OPTIONS=	consolekit inet6 pam
-PKG_SUGGESTED_OPTIONS=	consolekit inet6
+PKG_SUGGESTED_OPTIONS=	consolekit pam
 
 .include "../../mk/bsd.options.mk"
 
 .if !empty(PKG_OPTIONS:Minet6)
 CONFIGURE_ARGS+=	--enable-ipv6
+PLIST_VARS+=		inet6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
@@ -17,6 +18,7 @@ CONFIGURE_ARGS+=	--with-console-kit=yes
 .include "../../sysutils/consolekit/buildlink3.mk"
 .include "../../sysutils/dbus/buildlink3.mk"
 .include "../../sysutils/dbus-glib/buildlink3.mk"
+PLIST_VARS+=		consolekit
 .else
 CONFIGURE_ARGS+=	--with-console-kit=no
 .endif

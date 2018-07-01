@@ -4,7 +4,7 @@ PKGREVISION= 1
 .include "../../mate/mate/Makefile.common"
 
 DISTNAME=	mate-backgrounds-${VERSION}
-CATEGORIES=	mate
+CATEGORIES?=		graphics mate
 
 COMMENT=	Set of backgrounds packaged with the MATE desktop
 

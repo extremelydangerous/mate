@@ -16,7 +16,7 @@ stop_cmd="findprinter_stop"
 timer=${findprinter_timer:-10}
 
 findprinter_start() {
-	/usr/pkg/bin/daemon -p $pidfile /usr/bin/bin/findprinter
+	/usr/pkg/bin/daemon -p $pidfile /usr/pkg/bin/findprinter
 	echo $! > $pidfile
 	echo $name STARTED
 }

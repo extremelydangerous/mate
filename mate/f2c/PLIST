@@ -1,6 +1,0 @@
-@comment $NetBSD$
-bin/f2c
-bin/f2c-f77
-man/man1/f2c.1
-share/doc/f2c/changes
-@pkgdir share/examples/rc.d

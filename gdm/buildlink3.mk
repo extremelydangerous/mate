@@ -16,7 +16,7 @@ BUILDLINK_TREE+=	gdm
 GDM_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.gdm+=	gdm>=2.20.11nb1
-BUILDLINK_PKGSRCDIR.gdm?=	../../mate/gdm
+BUILDLINK_PKGSRCDIR.gdm?=	../../x11/gdm
 
 # XXX
 # XXX Uncomment and keep only the buildlink3 lines below which are directly

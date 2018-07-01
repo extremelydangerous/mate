@@ -16,7 +16,7 @@ BUILDLINK_TREE+=	pulseaudio-tools
 PULSEAUDIO_TOOLS_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.pulseaudio-tools+=	pulseaudio-tools>=1.0
-BUILDLINK_PKGSRCDIR.pulseaudio-tools?=	../../lzt/pulseaudio-tools
+BUILDLINK_PKGSRCDIR.pulseaudio-tools?=	../../meta-pkgs/pulseaudio-tools
 
 # XXX
 # XXX Uncomment and keep only the buildlink3 lines below which are directly
