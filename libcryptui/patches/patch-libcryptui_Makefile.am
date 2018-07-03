@@ -1,0 +1,10 @@
+$NetBSD$
+
+--- libcryptui/Makefile.am.orig	2018-07-03 00:35:06.000000000 +0000
++++ libcryptui/Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = . tests
++SUBDIRS = .
+ 
+ # -----------------------------------------------------------------
+ # LIBRARY HEADERS

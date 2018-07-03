@@ -1,0 +1,69 @@
+--- configure.in.orig	2018-03-13 22:43:47.050988343 -0300
++++ configure.in	2018-03-13 22:43:39.180953876 -0300
+@@ -158,7 +158,7 @@
+ AC_SEARCH_LIBS(login_tty, util, [AC_DEFINE([HAVE_LOGIN_TTY],[],[Whether login_tty is available])])
+ 
+ AC_FUNC_ALLOCA
+-AC_CHECK_FUNCS(getdtablesize open64 lseek64 statfs statvfs seteuid setegid setresuid setresgid readdir_r mbrtowc inet_pton getdelim sysctlbyname poll posix_fadvise fchmod atoll mmap)
++AC_CHECK_FUNCS(getdtablesize open64 lseek64 statvfs seteuid setegid setresuid setresgid readdir_r mbrtowc inet_pton getdelim sysctlbyname poll posix_fadvise fchmod atoll mmap)
+ AC_CHECK_MEMBERS([struct stat.st_blksize, struct stat.st_rdev])
+ AC_STRUCT_ST_BLOCKS
+ 
+@@ -185,7 +185,7 @@
+ AC_SUBST(VFS_SIZE_IS)
+ AC_SUBST(VFS_OFFSET_IS)
+ 
+-AC_CHECK_HEADERS(sys/param.h sys/resource.h sys/vfs.h sys/mount.h sys/statfs.h sys/statvfs.h sys/param.h wctype.h sys/poll.h poll.h)
++AC_CHECK_HEADERS(sys/param.h sys/resource.h sys/vfs.h sys/mount.h sys/statvfs.h sys/param.h wctype.h sys/poll.h poll.h)
+ 
+ dnl
+ dnl file system type member in statfs struct
+@@ -668,14 +668,14 @@
+     AC_MSG_ERROR([*** Can't use both openssl and gnutls at the same time. Please pick one only. ***])
+   else
+     AC_CHECK_HEADER(gcrypt.h,, AC_MSG_ERROR([*** Need gcrypt.h to compile with GnuTLS support ***]))
+-    AM_PATH_LIBGNUTLS(1.0.0, [AC_DEFINE(HAVE_GNUTLS, 1, [Define to 1 if GnuTLS is available])
+-			      have_ssl=true])
++    PKG_CHECK_MODULES(LIBGNUTLS, gnutls >= 1.0.0, [AC_DEFINE(HAVE_GNUTLS, 1, [Define to 1 if GnuTLS is available])
++    				 	   	  have_ssl=true])
+ 
+     if test "x${LIBGNUTLS_LIBS}" = "x"; then
+-      AM_PATH_LIBGNUTLS(0.5.1, [AC_DEFINE(HAVE_GNUTLS, 1, [Define to 1 if GnuTLS is available])
+-                                 AC_DEFINE(GNUTLS_COMPAT, 1, [FIXME])
+-				 have_ssl=true],
+-                                 AC_MSG_ERROR([Unable to find GNUTLS]))
++      PKG_CHECK_MODULES(LIBGNUTLS, gnutls >= 0.5.1, [AC_DEFINE(HAVE_GNUTLS, 1, [Define to 1 if GnuTLS is available])
++      				   	     	    AC_DEFINE(GNUTLS_COMPAT, 1, [FIXME])
++						    have_ssl=true],
++						    AC_MSG_ERROR([Unable to find GNUTLS]))
+     fi
+   fi
+ fi
+@@ -689,6 +689,16 @@
+ AM_CONDITIONAL(HAVE_SSL, test x$have_ssl = xtrue)
+ 
+ dnl ****************************
++dnl LibGCrypt 1.5.0
++dnl ****************************
++
++AM_PATH_LIBGCRYPT(1.5.0)
++
++if test "x${LIBGCRYPT_LIBS}" = "x"; then
++	AC_MSG_ERROR([unable to find libgcrypt])
++fi
++
++dnl ****************************
+ dnl DNS-SD implementations
+ dnl ****************************
+ AM_CONDITIONAL(HAVE_AVAHI, false)
+@@ -1045,8 +1055,8 @@
+ dnl ==============================================================================
+ 
+ PKG_CHECK_MODULES(LIBGNOMEVFS, glib-2.0 >= $GLIB_REQUIRED gmodule-no-export-2.0 >= $GLIB_REQUIRED gthread-2.0 >= $GLIB_REQUIRED gobject-2.0 >= $GLIB_REQUIRED gconf-2.0 >= $GCONF_REQUIRED libxml-2.0 >= $XML_REQUIRED gnome-mime-data-2.0 $dbus_requirement)
+-LIBGNOMEVFS_CFLAGS="$LIBGNOMEVFS_CFLAGS $OPENSSL_CFLAGS $LIBGNUTLS_CFLAGS $HOWL_CFLAGS $AVAHI_CFLAGS"
+-LIBGNOMEVFS_LIBS="$LIBGNOMEVFS_LIBS $OPENSSL_LIBS $LIBGNUTLS_LIBS $HOWL_LIBS $AVAHI_LIBS $RESOLVER_LIBS"
++LIBGNOMEVFS_CFLAGS="$LIBGNOMEVFS_CFLAGS $OPENSSL_CFLAGS $LIBGNUTLS_CFLAGS $HOWL_CFLAGS $AVAHI_CFLAGS $LIBGCRYPT_CFLAGS"
++LIBGNOMEVFS_LIBS="$LIBGNOMEVFS_LIBS $OPENSSL_LIBS $LIBGNUTLS_LIBS $HOWL_LIBS $AVAHI_LIBS $RESOLVER_LIBS  $LIBGCRYPT_LIBS"
+ AC_SUBST(LIBGNOMEVFS_CFLAGS)
+ AC_SUBST(LIBGNOMEVFS_LIBS)
+ 

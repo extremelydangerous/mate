@@ -1,0 +1,4 @@
+@comment $NetBSD$
+include/f2c.h
+lib/libf2c.la
+@pkgdir share/examples/rc.d

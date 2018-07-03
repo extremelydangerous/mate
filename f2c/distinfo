@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (src.tgz) = bf3c5ebf98327c86baa8dcf3cfa58589003b07d9
+RMD160 (src.tgz) = ba09dcad855a0d3003ee8e9b8b65f591fbbe90fd
+SHA512 (src.tgz) = 74870ada5a0900fc3c179e02c4eba0858eec3f40bc3b040aee4988c948fd3cf9970ac4be794f1716426cf69e0e88333d7410cb4b6923e56fa220dc3f7a438fa1
+Size (src.tgz) = 283433 bytes
+SHA1 (patch-f2c-f77) = bf4142dbd18b3392fc101f935d6be642f3793007

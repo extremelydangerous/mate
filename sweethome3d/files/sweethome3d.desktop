@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Interior Design Editor
+Name[pt_BR]=Editor de Interiores
+Comment=Edit your Interiors
+Comment[pt_BR]=Edite o Interior de sua casa
+Type=Application
+Exec=sweethome3d %F
+Icon=sweeethome3d
+Terminal=false
+Categories=GNOME;Graphics;
+StartupNotify=true

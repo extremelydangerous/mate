@@ -1,0 +1,74 @@
+$NetBSD: patch-configure.ac,v 1.10 2018/02/13 13:03:07 ryoon Exp $
+
+--- configure.ac.orig	2018-02-08 14:35:19.000000000 +0000
++++ configure.ac
+@@ -5852,14 +5852,14 @@ if test "$GCC" = "yes" -o "$COM_IS_CLANG
+         ], [AC_MSG_RESULT([no])])
+     AC_LANG_POP([C++])
+ 
+-    AC_MSG_CHECKING([whether $CXX defines __cxa_exceptions in cxxabi.h])
++    AC_MSG_CHECKING([whether $CXX defines __cxa_exception in cxxabi.h])
+     AC_LANG_PUSH([C++])
+     AC_COMPILE_IFELSE([AC_LANG_SOURCE([
+             #include <cstddef>
+             #include <cxxabi.h>
+-            std::size_t f() { return sizeof(__cxxabiv1::__cxa_exceptions); }
++            std::size_t f() { return sizeof(__cxxabiv1::__cxa_exception); }
+         ])], [
+-            AC_DEFINE([HAVE_CXXABI_H_CXA_EXCEPTIONS],[1])
++            AC_DEFINE([HAVE_CXXABI_H_CXA_EXCEPTION],[1])
+             AC_MSG_RESULT([yes])
+         ], [AC_MSG_RESULT([no])])
+     AC_LANG_POP([C++])
+@@ -7423,7 +7423,7 @@ else
+     if test "$COM" = "MSC"; then
+         LIBJPEG_LIBS="${WORKDIR}/UnpackedTarball/libjpeg-turbo/.libs/libjpeg.lib"
+     else
+-        LIBJPEG_LIBS="-L${WORKDIR}/UnpackedTarball/libjpeg-turbo/.libs -ljpeg"
++        LIBJPEG_LIBS="${WORKDIR}/UnpackedTarball/libjpeg-turbo/.libs/libjpeg.a"
+     fi
+ 
+     case "$host_cpu" in
+@@ -8996,11 +8996,11 @@ dnl HarfBuzz
+ dnl ===================================================================
+ libo_CHECK_SYSTEM_MODULE([graphite],[GRAPHITE],[graphite2 >= 0.9.3],
+                          ["-I${WORKDIR}/UnpackedTarball/graphite/include -DGRAPHITE2_STATIC"],
+-                         ["-L${WORKDIR}/LinkTarget/StaticLibrary -lgraphite"])
++                         ["${WORKDIR}/LinkTarget/StaticLibrary/libgraphite.a"])
+ 
+ libo_CHECK_SYSTEM_MODULE([harfbuzz],[HARFBUZZ],[harfbuzz-icu >= 0.9.42],
+                          ["-I${WORKDIR}/UnpackedTarball/harfbuzz/src"],
+-                         ["-L${WORKDIR}/UnpackedTarball/harfbuzz/src/.libs -lharfbuzz"])
++                         ["${WORKDIR}/UnpackedTarball/harfbuzz/src/.libs/libharfbuzz.a"])
+ 
+ if test "$COM" = "MSC"; then # override the above
+     GRAPHITE_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/graphite.lib"
+@@ -10122,7 +10122,7 @@ AC_SUBST(ENABLE_PDFIUM)
+ SYSTEM_GPGMEPP=
+ if test "$enable_mpl_subset" = "yes" ; then
+    :
+-elif test "$_os" = "Linux" -o "$_os" = "Darwin" \
++elif test "$_os" = "Linux" -o "$_os" = "Darwin" -o "$_os" = "NetBSD" \
+    -o \( "$_os" = "WINNT" -a "$host_cpu" = "x86_64" \) \
+    -o \( "$_os" = "WINNT" -a "$host_cpu" = "i686" -a "$WINDOWS_SDK_ARCH" = "x86" \) ; then
+     dnl ===================================================================
+@@ -10134,7 +10134,7 @@ elif test "$_os" = "Linux" -o "$_os" = "
+         SYSTEM_GPGMEPP=TRUE
+ 
+         # C++ library doesn't come with fancy gpgmepp-config, check for headers the old-fashioned way
+-        AC_CHECK_HEADER(gpgme++/gpgmepp_version.h, [ GPGMEPP_CFLAGS=-I/usr/include/gpgme++ ],
++        AC_CHECK_HEADER(gpgme++/gpgmepp_version.h, [ GPGMEPP_CFLAGS=-I@PREFIX@/include/gpgme++ ],
+             [AC_MSG_ERROR([gpgmepp headers not found, install gpgmepp development package])], [])
+         # progress_callback is the only func with plain C linkage
+         # checking for it also filters out older, KDE-dependent libgpgmepp versions
+@@ -11520,8 +11520,8 @@ EOF
+     dnl Checking for ant.jar
+     if test "$ANT_HOME" != "NO_ANT_HOME"; then
+         AC_MSG_CHECKING([Ant lib directory])
+-        if test -f $ANT_HOME/lib/ant.jar; then
+-            ANT_LIB="$ANT_HOME/lib"
++        if test -f $ANT_HOME/lib/java/ant/ant.jar; then
++            ANT_LIB="$ANT_HOME/lib/java/ant"
+         else
+             if test -f $ANT_HOME/ant.jar; then
+                 ANT_LIB="$ANT_HOME"

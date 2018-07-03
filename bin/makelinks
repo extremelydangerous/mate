@@ -1,0 +1,65 @@
+#!/bin/sh
+SAVE=/usr/pkgsrc.save
+ORIGINS=/tmp/origins
+MFILE=Makefile
+HERE=mate
+getorigin() {
+	CAT=$(grep CATEGORIES $1/*)
+	if  [ -n "$CAT" ]
+	then
+		set $CAT
+		echo $2
+	fi
+}
+
+mkdir -p ${SAVE}
+(cd /usr/pkgsrc
+find * -type d -maxdepth 1 \! -name CVS | grep -v "mate/" | grep / | sort -u ) > $ORIGINS
+cd /usr/pkgsrc/mate
+ls | grep -v CVS  | \
+while read p
+do
+	for MFILE in Makefile Makefile.common nada
+	do
+		if [ -s $p/$MFILE ]
+		then
+			if grep -q CATEGORIES $p/$MFILE
+			then
+				break
+			fi
+		fi
+	done
+	if [ "$MFILE" = "nada" ]
+	then
+		#echo Makefile or Makefile.common not found for $p
+		continue
+	fi
+	if ! grep "/$p\$" ${ORIGINS} > /tmp/$$
+	then
+		O=$(getorigin $p)
+		if [ -n "$O" ]
+		then
+			if [ "$O" = "mate" ]
+			then
+				continue
+			fi
+			if [ -s ../$O/$p ]
+			then
+				rm -rf /usr/pkgsrc/$O/$p
+			fi
+			ln -s ../$HERE/$p /usr/pkgsrc/$O
+			echo $p link recreated
+		fi
+		continue
+	fi
+	set $(cat /tmp/$$)
+	ORIGIN=$(echo $1 | sed "s;/.*;;")
+	sed -i "/^CATEGORIES/s/^CATEGORIES.*/CATEGORIES\?=		$ORIGIN mate/" $p/$MFILE
+	if [ ! -L /usr/pkgsrc/$ORIGIN/$p ]
+	then
+		mv /usr/pkgsrc/${ORIGIN}/$p $SAVE
+		ln -s ../mate/$p /usr/pkgsrc/${ORIGIN}
+		echo $p done
+	fi
+done
+rm -f /tmp/$$ #$ORIGINS

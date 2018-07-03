@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.21 2015/11/03 00:21:17 agc Exp $
+
+SHA1 (geda-gaf-1.9.2.tar.gz) = c7a2a2bd87f9f8a0d5701890016d2900c789dc7c
+RMD160 (geda-gaf-1.9.2.tar.gz) = e7847c5a87921fbfad6e3e2225f379ecefbf5bec
+SHA512 (geda-gaf-1.9.2.tar.gz) = 5e26ea2cffffe50bd4f0bdb4594af9cc4510386d29c715c2b4ea99c6522838a08cc2045bf65e8b1da01ab33a266fc9f03da42e28b8cc4d5c030001777ab077e3
+Size (geda-gaf-1.9.2.tar.gz) = 10612225 bytes
+SHA1 (patch-build-tools_icon-theme-installer) = 9bbc1129bf7de3d2534219471014c19389c073b5

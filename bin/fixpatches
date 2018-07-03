@@ -1,0 +1,4 @@
+set -e
+mkpatches
+rm -f patches/*.orig
+make mps

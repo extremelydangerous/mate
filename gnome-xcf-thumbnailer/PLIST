@@ -1,0 +1,4 @@
+@comment $NetBSD$
+bin/gnome-xcf-thumbnailer
+share/gconf/schemas/gnome-xcf-thumbnailer.schemas
+share/thumbnailers/gnome-xcf.thumbnailer

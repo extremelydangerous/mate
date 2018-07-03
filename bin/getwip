@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+cd /usr/pkgsrc
+git clone --depth 1 git://wip.pkgsrc.org/pkgsrc-wip.git wip

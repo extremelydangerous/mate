@@ -1,0 +1,36 @@
+$NetBSD$
+
+--- gio/Makefile.am.orig	2018-01-08 20:00:42.000000000 +0000
++++ gio/Makefile.am
+@@ -1,6 +1,6 @@
+ include $(top_srcdir)/glib.mk
+ 
+-SUBDIRS = gdbus-2.0/codegen
++SUBDIRS = 
+ 
+ if OS_UNIX
+ if !OS_COCOA
+@@ -244,7 +244,7 @@ platform_libadd += win32/libgiowin32.la
+ platform_deps += win32/libgiowin32.la
+ endif
+ 
+-SUBDIRS += . tests
++SUBDIRS += .
+ 
+ if HAVE_FAM
+ SUBDIRS += fam
+@@ -897,14 +897,6 @@ gapplication_LDADD = libgio-2.0.la 			\
+ endif
+ endif
+ 
+-completiondir = $(datadir)/bash-completion/completions
+-completion_DATA = \
+-	completion/gapplication				\
+-	completion/gdbus				\
+-	completion/gsettings				\
+-	completion/gresource
+-EXTRA_DIST += $(completion_DATA)
+-
+ # ------------------------------------------------------------------------
+ # gresource tool
+ 

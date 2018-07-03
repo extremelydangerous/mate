@@ -1,0 +1,8 @@
+$NetBSD$
+
+SHA1 (gnome3/seahorse-3.18.0.tar.xz) = c66702d1db13217806e46b0812fc49972867cad3
+RMD160 (gnome3/seahorse-3.18.0.tar.xz) = 50316d4704f2dc2ed16b82a5d120ce67c4d08927
+SHA512 (gnome3/seahorse-3.18.0.tar.xz) = 76475645d1f94a99bf12c3bbbd840526ab3f1da9c6dd7c8c7fca1cca1cdb22692c44d6107ed1f0192dacb6990c1bbc5c1e0bb9a412132fbf18b302d6059cb254
+Size (gnome3/seahorse-3.18.0.tar.xz) = 1555384 bytes
+SHA1 (patch-Makefile.am) = e2ffa0d38fdce02088600f85f7ed9dd6ce0dec43
+SHA1 (patch-configure.ac) = d42c42c8e5ed692b7d345fdde2adaea183d6b886

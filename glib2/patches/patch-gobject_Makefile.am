@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- gobject/Makefile.am.orig	2018-01-08 20:00:42.000000000 +0000
++++ gobject/Makefile.am
+@@ -187,7 +187,6 @@ libgobject_2_0_la_SOURCES = $(gobject_ta
+ # programs to compile and install
+ #
+ bin_PROGRAMS = gobject-query
+-bin_SCRIPTS = glib-mkenums glib-genmarshal
+ # source files
+ gobject_query_SOURCES = gobject-query.c
+ # link programs against libgobject

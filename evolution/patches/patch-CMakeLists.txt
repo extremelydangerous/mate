@@ -1,0 +1,35 @@
+$NetBSD$
+
+--- CMakeLists.txt.orig	2017-05-08 12:13:14.000000000 +0000
++++ CMakeLists.txt
+@@ -92,16 +92,16 @@ set(libcanberra_gtk_minimum_version 0.25
+ set(libnotify_minimum_version 0.7)
+ 
+ # Load modules from the source tree
+-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
++set (CMAKE_MODULE_PATH "/usr/work/mate/evolution/work/.buildlink/cmake-Modules" ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
+ 
+ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ # Packagers might want to need different settings for the RPATH related things
+ # From experience, especially CMAKE_BUILD_WITH_INSTALL_RPATH might need to be
+ # switched to ON, if CMake fails to set the right values during make install
+-set(CMAKE_SKIP_RPATH OFF)
+-set(CMAKE_SKIP_BUILD_RPATH OFF CACHE BOOL INTERNAL)
+-set(CMAKE_BUILD_WITH_INSTALL_RPATH OFF CACHE BOOL INTERNAL)
+-set(CMAKE_INSTALL_RPATH_USE_LINK_PATH ON CACHE BOOL INTERNAL)
++set(CMAKE_SKIP_RPATH ON)
++set(CMAKE_SKIP_BUILD_RPATH ON CACHE BOOL INTERNAL)
++set(CMAKE_BUILD_WITH_INSTALL_RPATH ON CACHE BOOL INTERNAL)
++set(CMAKE_INSTALL_RPATH_USE_LINK_PATH OFF CACHE BOOL INTERNAL)
+ # CMAKE_INSTALL_RPATH is set below
+ 
+ # CMake modules
+@@ -151,7 +151,7 @@ set(privincludedir "${INCLUDE_INSTALL_DI
+ set(privlibdir "${LIB_INSTALL_DIR}/${PROJECT_NAME}")
+ set(privlibexecdir "${LIBEXEC_INSTALL_DIR}/${PROJECT_NAME}")
+ 
+-SET(CMAKE_INSTALL_RPATH "${LIB_INSTALL_DIR}:${privlibdir}")
++SET(CMAKE_INSTALL_RPATH "${LIB_INSTALL_DIR}:${privlibdir}:/usr/pkg/lib/evolution")
+ 
+ if(WIN32)
+ 	# On Win32 there is no "rpath" mechanism. We install the private

@@ -1,0 +1,15 @@
+$NetBSD$
+
+--- js/src/moz.build.orig	2017-06-15 20:52:06.000000000 +0000
++++ js/src/moz.build
+@@ -748,10 +748,6 @@ OS_LIBS += CONFIG['REALTIME_LIBS']
+ CFLAGS += CONFIG['MOZ_ICU_CFLAGS']
+ CXXFLAGS += CONFIG['MOZ_ICU_CFLAGS']
+ 
+-NO_EXPAND_LIBS = True
+-
+-DIST_INSTALL = True
+-
+ # Prepare self-hosted JS code for embedding
+ GENERATED_FILES += [('selfhosted.out.h', 'selfhosted.js')]
+ selfhosted = GENERATED_FILES[('selfhosted.out.h', 'selfhosted.js')]

@@ -1,0 +1,29 @@
+$NetBSD$
+
+--- config.h.in.orig	2010-09-28 09:35:21.000000000 +0000
++++ config.h.in
+@@ -102,6 +102,14 @@
+ /* Define to 1 if cdparanoia contains FreeBSD-specific libcam support */
+ #undef HAVE_CDDA_WITH_LIBCAM
+ 
++/* Define to 1 if you have the Mac OS X function CFLocaleCopyCurrent in the
++   CoreFoundation framework. */
++#undef HAVE_CFLOCALECOPYCURRENT
++
++/* Define to 1 if you have the Mac OS X function CFPreferencesCopyAppValue in
++   the CoreFoundation framework. */
++#undef HAVE_CFPREFERENCESCOPYAPPVALUE
++
+ /* Define to 1 if you have the `dcgettext' function. */
+ #undef HAVE_DCGETTEXT
+ 
+@@ -506,8 +514,7 @@
+ /* Define to 1 if you have the <wctype.h> header file. */
+ #undef HAVE_WCTYPE_H
+ 
+-/* Define to the sub-directory in which libtool stores uninstalled libraries.
+-   */
++/* Define to the sub-directory where libtool stores uninstalled libraries. */
+ #undef LT_OBJDIR
+ 
+ /* Build neon ssl support */

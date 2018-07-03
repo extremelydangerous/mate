@@ -1,0 +1,14 @@
+for i in \
+	net/rsync \
+	devel/cscope \
+	pkgtools/pkgdiff \
+	pkgtools/url2pkg \
+	pkgtools/createbuildlink
+do
+	p=$(basename $i)
+	if ! pkg_info -qe $p
+	then
+		echo install $i
+		(cd /usr/pkgsrc/$i;make install clean)
+	fi
+done

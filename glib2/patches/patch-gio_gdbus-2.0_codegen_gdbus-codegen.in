@@ -1,0 +1,10 @@
+$NetBSD$
+
+--- gio/gdbus-2.0/codegen/gdbus-codegen.in.orig	2018-01-08 20:00:42.000000000 +0000
++++ gio/gdbus-2.0/codegen/gdbus-codegen.in
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env @PYTHON@
++#!@PYTHON@
+ 
+ # GDBus - GLib D-Bus Library
+ #

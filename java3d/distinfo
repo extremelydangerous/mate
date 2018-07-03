@@ -1,0 +1,13 @@
+$NetBSD$
+
+SHA1 (java3d-1.5.2.tar.bz2) = 55a56d1cf860157589a288ee19d67361414d57d8
+RMD160 (java3d-1.5.2.tar.bz2) = 6ea9a1b6a78d68f352cdf5185156857f8df0928e
+SHA512 (java3d-1.5.2.tar.bz2) = e623abbe1ccb828a81db749c5cf8d4d5e7770fa3665a2785d7c011b403a5a82945d18d20de20e14be6b12c3b9673f2e88cc81ca10baa783207be5c50f5a4c3c2
+Size (java3d-1.5.2.tar.bz2) = 2271358 bytes
+SHA1 (patch-ImageComponentState.java) = bebb66644ab622d968f23be02d8ed49c040a8f64
+SHA1 (patch-gldefs.h) = 4d531a2349f96fd777c4d0bdc49e0fae553d16d1
+SHA1 (patch-glext.h) = 025233625c0bed823f8fc962a4d059d15e751603
+SHA1 (patch-j3d-core_src_classes_build.xml) = 5d8fd22371ff7477b4c36038a685fe3dc290e37e
+SHA1 (patch-j3d-core_src_native_build.xml) = 9da8adbe7446e9ba30f450eeb625ca7f25fcccfc
+SHA1 (patch-j3d-core_src_native_ogl_build-netbsd.xml) = 2bda1e82f61f42275c7007273e81a1933d68c7b0
+SHA1 (patch-netbsd) = 09d2c617312fd906647f2a6ec2dba69c9b25ec07

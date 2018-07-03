@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (gnome3/evolution-3.24.2.tar.xz) = d6c4170fb7490d57df79545ae9eccb962604695f
+RMD160 (gnome3/evolution-3.24.2.tar.xz) = 90ef0005c7cacc2460b7e4f166d5f1486c1f22ab
+SHA512 (gnome3/evolution-3.24.2.tar.xz) = 609a4993fdfcd0f18b03ef04ecce6b612af7de6a95a80e8e26167eb03841822b0a65c351400f4599cb4a231e26783711be0acd007d4e7e75d856b43858c40aa3
+Size (gnome3/evolution-3.24.2.tar.xz) = 12132032 bytes
+SHA1 (patch-CMakeLists.txt) = 6fe4f8ef907829c603e062ffa54a10a6ccbcdcd6

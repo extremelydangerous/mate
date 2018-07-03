@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- test/Makefile.am.orig	2010-02-09 12:16:14.000000000 +0000
++++ test/Makefile.am
+@@ -65,7 +65,7 @@ TESTS = test-acl	  \
+ 	test-async-cancel \
+ 	test-escape       \
+ 	test-uri       	  \
+-	$(srcdir)/auto-test	
++	auto-test
+ 
+ libraries =						\
+ 	$(top_builddir)/libgnomevfs/libgnomevfs-2.la	\

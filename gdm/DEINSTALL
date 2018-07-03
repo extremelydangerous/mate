@@ -1,0 +1,18 @@
+t=/tmp/$$
+case ${STAGE} in
+DEINSTALL)
+	if [ ! -d /usr/pkg/share/gdm ]
+	then
+		exit 0
+	fi
+	find /usr/pkg/share/gdm /usr/pkg/etc/gdm -type f | xargs grep -l /usr/X11R7/bin/X | \
+	while read f
+	do
+		echo -n "RESTORE Xserver to /usr/X11R7 in $f ... "
+		sed "s;/usr/pkg/bin/X;/usr/X11R7/bin/X;" $f >  $t
+		cp $t $f
+		echo DONE
+	done
+;;
+esac
+rm -f $t

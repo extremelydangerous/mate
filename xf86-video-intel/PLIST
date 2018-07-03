@@ -1,0 +1,18 @@
+@comment $NetBSD$
+lib/xorg/modules/drivers/intel_drv.la
+man/man4/intel.4
+@pkgdir share/fonts/X11/misc
+@pkgdir share/fonts/X11/cyrillic
+@pkgdir share/fonts/X11/Type1
+@pkgdir share/fonts/X11/TTF
+@pkgdir share/fonts/X11/OTF
+@pkgdir share/fonts/X11/75dpi
+@pkgdir share/fonts/X11/100dpi
+@pkgdir share/examples/rc.d
+@pkgdir lib/X11/fonts/misc
+@pkgdir lib/X11/fonts/cyrillic
+@pkgdir lib/X11/fonts/Type1
+@pkgdir lib/X11/fonts/TTF
+@pkgdir lib/X11/fonts/OTF
+@pkgdir lib/X11/fonts/75dpi
+@pkgdir lib/X11/fonts/100dpi

@@ -1,0 +1,25 @@
+$NetBSD$
+
+--- media/libcubeb/src/moz.build.orig	2017-06-15 20:52:13.000000000 +0000
++++ media/libcubeb/src/moz.build
+@@ -20,6 +20,12 @@ if CONFIG['MOZ_ALSA']:
+     ]
+     DEFINES['USE_ALSA'] = True
+ 
++if CONFIG['MOZ_OSS']:
++    SOURCES += [
++        'cubeb_oss.c',
++    ]
++    DEFINES['USE_OSS'] = True
++
+ if CONFIG['MOZ_PULSEAUDIO'] or CONFIG['MOZ_JACK']:
+     SOURCES += [
+         'cubeb_resampler.cpp',
+@@ -92,6 +98,7 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] == 'gonk
+             '%' + '%s/system/media/wilhelm/include' % CONFIG['ANDROID_SOURCE'],
+         ]
+ 
++CFLAGS += CONFIG['MOZ_OSS_CFLAGS']
+ CFLAGS += CONFIG['MOZ_ALSA_CFLAGS']
+ CFLAGS += CONFIG['MOZ_PULSEAUDIO_CFLAGS']
+ 

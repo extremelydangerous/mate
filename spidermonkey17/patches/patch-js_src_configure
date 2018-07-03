@@ -1,0 +1,19 @@
+$NetBSD$
+
+--- js/src/configure.orig	2013-03-25 20:34:20.000000000 +0000
++++ js/src/configure
+@@ -10292,7 +10292,13 @@ cross_compiling=$ac_cv_prog_cc_cross
+ # Check whether --enable-dtrace or --disable-dtrace was given.
+ if test "${enable_dtrace+set}" = set; then
+   enableval="$enable_dtrace"
+-  enable_dtrace="yes"
++  if test "$enableval" = "yes"; then
++    enable_dtrace="yes"
++  elif test "$enableval" = "no"; then
++    :
++  else
++    { echo "configure: error: Option, dtrace, does not take an argument ($enableval)." 1>&2; exit 1; }
++  fi
+ fi
+ 
+ if test "x$enable_dtrace" = "xyes"; then

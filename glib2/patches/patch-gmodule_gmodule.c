@@ -1,0 +1,74 @@
+$NetBSD$
+
+--- gmodule/gmodule.c.orig	2018-01-08 20:00:42.000000000 +0000
++++ gmodule/gmodule.c
+@@ -756,6 +756,31 @@ g_module_error (void)
+   return g_private_get (&module_error_private);
+ }
+ 
++static void
++g_module_symbol_aux (GModule           *module,
++                    const gchar        *symbol_name,
++                    gpointer           *symbol)
++{
++  gpointer hdl = module->handle;
++#if defined (G_MODULE_BROKEN_DLOPEN_NULL) && defined(__NetBSD__) && defined(RTLD_DEFAULT)
++  /* use some special handle to access global namespace */
++  if (module == main_module)
++    hdl = RTLD_DEFAULT;
++#endif
++
++#ifdef G_MODULE_NEED_USCORE
++  {
++    gchar *name;
++
++    name = g_strconcat ("_", symbol_name, NULL);
++    *symbol = _g_module_symbol (module->handle, name);
++    g_free (name);
++  }
++#else
++  *symbol = _g_module_symbol (module->handle, symbol_name);
++#endif
++}
++
+ /**
+  * g_module_symbol:
+  * @module: a #GModule
+@@ -784,17 +809,28 @@ g_module_symbol (GModule     *module,
+   
+   g_rec_mutex_lock (&g_module_global_lock);
+ 
+-#ifdef	G_MODULE_NEED_USCORE
++#ifdef	G_MODULE_BROKEN_DLOPEN_NULL
++  if (module == main_module)
+   {
+-    gchar *name;
+-
+-    name = g_strconcat ("_", symbol_name, NULL);
+-    *symbol = _g_module_symbol (module->handle, name);
+-    g_free (name);
++      g_module_symbol_aux(module, symbol_name, symbol);
++      if (*symbol == NULL)
++        {
++          for (module = modules; module; module = module->next)
++            {
++              g_module_symbol_aux(module, symbol_name, symbol);
++              if (*symbol != NULL)
++                {
++                  g_module_set_error (NULL);
++                  break;
+   }
+-#else	/* !G_MODULE_NEED_USCORE */
+-  *symbol = _g_module_symbol (module->handle, symbol_name);
+-#endif	/* !G_MODULE_NEED_USCORE */
++            }
++        }
++    }
++  else
++    g_module_symbol_aux(module, symbol_name, symbol);
++#else  /* !G_MODULE_BROKEN_DLOPEN_NULL */
++  g_module_symbol_aux(module, symbol_name, symbol);
++#endif /* G_MODULE_BROKEN_DLOPEN_NULL */
+   
+   module_error = g_module_error ();
+   if (module_error)

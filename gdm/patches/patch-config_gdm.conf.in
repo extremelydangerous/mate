@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- config/gdm.conf.in.orig	2018-04-14 13:02:25.243768702 +0000
++++ config/gdm.conf.in
+@@ -634,7 +634,7 @@ flexible=true
+ # highly interactive applications, -5 yields good responsiveness. The default
+ # value is 0 and the setpriority function is not called if the value is 0.
+ 
+-#priority=0
++priority=-5
+ 
+ # To use this server type you should add -query host or -indirect host to the
+ # command line.

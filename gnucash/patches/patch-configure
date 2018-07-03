@@ -1,0 +1,174 @@
+$NetBSD: patch-configure,v 1.7 2016/08/30 04:13:14 jnemeth Exp $
+
+Don't bother testing for libdbd-*.  Leave the choice of which to
+install and when up to the package user.
+
+--- configure.orig	2017-12-16 23:34:51.000000000 +0000
++++ configure
+@@ -22314,119 +22314,6 @@ else
+ 
+ fi
+ 
+-    case $host_os in
+-       win32*|mingw*)
+-	 LDINC="#include <windows.h>"
+-	 LDFUNCARGS=""
+-	 LDEXT=dll
+-	 ;;
+-       *)
+-	 LDINC="#include <dlfcn.h>"
+-	 LDFUNCARGS=", RTLD_NOW"
+-	 LDEXT=so
+-	 export LIBS="$lt_cv_dlopen_libs $LIBS"
+-	 ;;
+-      esac
+-    old_ld_library_path="$LD_LIBRARY_PATH"
+-    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$EXTRA_SEARCH_LIBS"
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: Search Path $LD_LIBRARY_PATH" >&5
+-$as_echo "$as_me: Search Path $LD_LIBRARY_PATH" >&6;}
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking Looking for at least one supported DBD module" >&5
+-$as_echo_n "checking Looking for at least one supported DBD module... " >&6; }
+-    if test "$cross_compiling" = yes; then :
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run test program while cross compiling
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-$LDINC
+-int
+-main ()
+-{
+-if (!$lt_cv_dlopen("libdbdsqlite3.$LDEXT"$LDFUNCARGS)) return -1;
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_run "$LINENO"; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: SQLite3" >&5
+-$as_echo "SQLite3" >&6; }
+-else
+-  if test "$cross_compiling" = yes; then :
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run test program while cross compiling
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-$LDINC
+-int
+-main ()
+-{
+-if (!$lt_cv_dlopen("libdbdmysql.$LDEXT"$LDFUNCARGS)) return -1;
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_run "$LINENO"; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: MySql" >&5
+-$as_echo "MySql" >&6; }
+-else
+-  if test "$cross_compiling" = yes; then :
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run test program while cross compiling
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-$LDINC
+-int
+-main ()
+-{
+-if (!$lt_cv_dlopen("libdbdpgsql.$LDEXT"$LDFUNCARGS)) return -1;
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_run "$LINENO"; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: Postgresql" >&5
+-$as_echo "Postgresql" >&6; }
+-else
+-  as_fn_error $? "
+-Unable to find any of the supported dbd modules
+-(libdbdsqlite3, libdbdmysql, or libdbdpgsql) needed to actually use the SQL
+-backend.
+-
+-If you do have them installed the problem is either that dlopen cannot
+-find them or that dlopen itself is not getting linked. Check config.log
+-to find out which.  You can add the option --with-dbi-dbd-dir pointing to
+-the directory in which they are located.
+-
+-If you do not actually want to build with libdi add --disable-dbi
+-to the configure argument list and run it again.
+-       " "$LINENO" 5
+-fi
+-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+-  conftest.$ac_objext conftest.beam conftest.$ac_ext
+-fi
+-
+-fi
+-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+-  conftest.$ac_objext conftest.beam conftest.$ac_ext
+-fi
+-
+-fi
+-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+-  conftest.$ac_objext conftest.beam conftest.$ac_ext
+-fi
+-
+ 
+     LIBDBI_LIBS=-ldbi
+     _COMPONENTS="$_COMPONENTS dbi"
+@@ -24102,23 +23989,23 @@ fi
+   else
+      pkg_config_min_version=0.9.0
+      if $PKG_CONFIG --atleast-pkgconfig-version $pkg_config_min_version; then
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for webkit-1.0 >= \"1.2\"" >&5
+-$as_echo_n "checking for webkit-1.0 >= \"1.2\"... " >&6; }
++        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for webkitgtk-3.0 >= \"2.4.11\"" >&5
++$as_echo_n "checking for webkitgtk-3.0 >= \"2.4.11\"... " >&6; }
+ 
+-        if $PKG_CONFIG --silence-errors --exists "webkit-1.0 >= "1.2"" ; then
++        if $PKG_CONFIG --silence-errors --exists "webkitgtk-3.0 >= "2.4.11"" ; then
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+             succeeded=yes
+ 
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking WEBKIT_CFLAGS" >&5
+ $as_echo_n "checking WEBKIT_CFLAGS... " >&6; }
+-            WEBKIT_CFLAGS=`$PKG_CONFIG --cflags "webkit-1.0 >= "1.2""`
++            WEBKIT_CFLAGS=`$PKG_CONFIG --cflags "webkitgtk-3.0 >= "2.4.11""`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $WEBKIT_CFLAGS" >&5
+ $as_echo "$WEBKIT_CFLAGS" >&6; }
+ 
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking WEBKIT_LIBS" >&5
+ $as_echo_n "checking WEBKIT_LIBS... " >&6; }
+-            WEBKIT_LIBS=`$PKG_CONFIG --libs "webkit-1.0 >= "1.2""`
++            WEBKIT_LIBS=`$PKG_CONFIG --libs "webkitgtk-3.0 >= "2.4.11""`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $WEBKIT_LIBS" >&5
+ $as_echo "$WEBKIT_LIBS" >&6; }
+         else
+@@ -24128,7 +24015,7 @@ $as_echo "no" >&6; }
+             WEBKIT_LIBS=""
+             ## If we have a custom action on failure, don't print errors, but
+             ## do set a variable so people can do so.
+-            WEBKIT_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "webkit-1.0 >= "1.2"" 2>&1`
++            WEBKIT_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "webkitgtk-3.0 >= "2.4.11"" 2>&1`
+             echo $WEBKIT_PKG_ERRORS
+         fi
+ 
+@@ -24143,7 +24030,7 @@ $as_echo "no" >&6; }
+   if test $succeeded = yes; then
+      :
+   else
+-     as_fn_error $? "Library requirements (webkit-1.0 >= \"1.2\") not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." "$LINENO" 5
++     as_fn_error $? "Library requirements (webkitgtk-3.0 >= \"2.4.11\") not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." "$LINENO" 5
+   fi
+ 
+       ;;

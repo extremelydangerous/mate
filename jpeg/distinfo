@@ -1,0 +1,10 @@
+$NetBSD$
+
+SHA1 (jpegsrc.v9c.tar.gz) = 112efadb1b68d52c41784be63e0b7b00cbc9453c
+RMD160 (jpegsrc.v9c.tar.gz) = 207fb4ad8ec936f59315d65ae7848d6b05542a71
+SHA512 (jpegsrc.v9c.tar.gz) = 97497adb6e1821da56f0e73ca7b9ad2aadb34f7b8b9437890a1de7a0685df428358eefc113d26650c271de69211b06d354428c07c50b6fb1160c3fb777b807c4
+Size (jpegsrc.v9c.tar.gz) = 1028200 bytes
+SHA1 (patch-Makefile.am) = 25dbf0d3e4d346a2685d57b8d29bee8b4adcf8b6
+SHA1 (patch-Makefile.in) = 6e992a7a577dd8f22ba5feb6276e95ddc714550c
+SHA1 (patch-jmorecfg.h) = 40a0656a1b8d342d738cbaf5fb87353ae098346c
+SHA1 (patch-jpeglib.h) = cf4e6e3f1e2454c9fceaa6524ff3bc6e528cf7c9

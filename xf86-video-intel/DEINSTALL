@@ -1,0 +1,11 @@
+t=/tmp/$$
+case ${STAGE} in
+DEINSTALL)
+	for f in misc cyrillic Type1 TTF OTF 75dpi 100dpi
+	do
+		find @LOCALBASE@/share/fonts/X11/$f \
+			@LOCALBASE@/lib/X11/fonts/$f -type l | xargs rm
+	done
+;;
+esac
+rm -f $t

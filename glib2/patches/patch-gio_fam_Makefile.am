@@ -1,0 +1,28 @@
+$NetBSD$
+
+--- gio/fam/Makefile.am.orig	2016-10-22 05:18:16.000000000 +0000
++++ gio/fam/Makefile.am
+@@ -15,11 +15,9 @@ libgiofam_la_CFLAGS = \
+ 	-DGIO_COMPILATION		\
+ 	-DG_DISABLE_DEPRECATED
+ 
+-libgiofam_la_LDFLAGS = $(module_flags)
++libgiofam_la_LDFLAGS = $(module_flags) \
++		$$(pkg-config --libs gio-2.0 gobject-2.0 glib-2.0)
+ libgiofam_la_LIBADD = \
+-		$(top_builddir)/gio/libgio-2.0.la \
+-		$(top_builddir)/gobject/libgobject-2.0.la \
+-		$(top_builddir)/glib/libglib-2.0.la \
+ 		$(GLIB_LIBS) \
+ 		$(FAM_LIBS) \
+ 		$(NULL)
+@@ -31,9 +29,6 @@ RUN_QUERY_MODULES=true
+ endif
+ 
+ install-data-hook:
+-	if $(RUN_QUERY_MODULES) && test -z "$(DESTDIR)" ; then					\
+-		$(top_builddir)/gio/gio-querymodules$(EXEEXT) $(DESTDIR)$(GIO_MODULE_DIR) ;	\
+-	fi
+ 
+ uninstall-local:
+ 	$(RM) $(DESTDIR)$(GIO_MODULE_DIR)/giomodule.cache

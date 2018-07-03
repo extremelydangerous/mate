@@ -1,0 +1,17 @@
+$NetBSD: distinfo,v 1.25 2015/10/25 13:50:22 jmcneill Exp $
+
+SHA1 (midori_0.5.11_all_.tar.bz2) = 64c86935028feb5f89d799c2acacaad67764da6f
+RMD160 (midori_0.5.11_all_.tar.bz2) = 66aaf624d39fbb86c1bec42972fba7998965ef50
+SHA512 (midori_0.5.11_all_.tar.bz2) = 237310d1f0bf70796474b9ec5be6755927e66acd2b527d04db39696c5e2f7ea2d11f7deb51ba3f5c151a450ab71e642282a1386e34253aaea1d8602ce76ac87d
+Size (midori_0.5.11_all_.tar.bz2) = 1428791 bytes
+SHA1 (patch-CMakeLists.txt) = 68d0232b254e4094118b7f029162bf669f096d45
+SHA1 (patch-config_CMakeLists.txt) = 5ac4af9f980749659058fb55e7fd25ad6226861f
+SHA1 (patch-config__search) = 949dad27da10f6a48f615bc59a8d4ff993bdce20
+SHA1 (patch-extensions__external-download-manager.vala) = 808a64f23fdf62b16fac33c9102868dd2ab24439
+SHA1 (patch-extensions_adblock_widgets.vala) = fe5c9eabace067e43ec434cf0b782be0b4c4a23c
+SHA1 (patch-extensions_apps.vala) = 45e330b5c786f3b5ecc032556597c15b7ae2e11d
+SHA1 (patch-extensions_history-list.vala) = 546565c194b1f05f802dd7eab27864c65b9311dc
+SHA1 (patch-extensions_notes.vala) = 89439e686c5ec80cf85e21d777e45116c52e877d
+SHA1 (patch-extensions_transfers.vala) = d15ea9f055b87084a8ad3d55a48862bf33e91d1a
+SHA1 (patch-midori__midori-stock.h) = e7d3c74738ac30f9d85b11f57e2d990efc42cd7a
+SHA1 (patch-midori_midori-notebook.vala) = 9a8d9a4f6421e97445480408ab0b2c906829d51c

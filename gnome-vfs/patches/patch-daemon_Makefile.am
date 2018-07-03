@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- daemon/Makefile.am.orig	2010-02-09 12:16:14.000000000 +0000
++++ daemon/Makefile.am
+@@ -8,7 +8,6 @@ INCLUDES= \
+ 	-D_LARGEFILE64_SOURCE                   \
+ 	-D_POSIX_PTHREAD_SEMANTICS		\
+ 	-D_REENTRANT				\
+-	-DG_DISABLE_DEPRECATED			\
+ 	-DGNOME_VFS_PREFIX=\"$(prefix)\"	\
+ 	-DGNOME_VFS_DATADIR=\"$(datadir)\"	\
+ 	-DGNOME_VFS_LIBDIR=\"$(libdir)\"	\

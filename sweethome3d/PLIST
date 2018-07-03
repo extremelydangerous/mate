@@ -1,0 +1,6 @@
+@comment $NetBSD$
+bin/sweethome3d
+lib/java/${PKGNAME}.jar
+share/applications/sweethome3d.desktop
+share/icons/hicolor/128x128/apps/sweethome3d.png
+@pkgdir share/examples/rc.d

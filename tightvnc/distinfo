@@ -1,0 +1,25 @@
+$NetBSD: distinfo,v 1.22 2015/11/04 00:35:40 agc Exp $
+
+SHA1 (tightvnc-1.3.10_unixsrc.tar.bz2) = ab4ed3d8e9d5188edf0ff27fce3027495f1a8851
+RMD160 (tightvnc-1.3.10_unixsrc.tar.bz2) = 0c24207ec13c1d41f445ccbdea16ce2b5d0729a7
+SHA512 (tightvnc-1.3.10_unixsrc.tar.bz2) = b5b3d5d532feffc07db2d48d3416e1a0d1b1b15bdb8ff801ed42042d4b99f34365e10e3b005bc15cc6e0a33c429db8976c227a1854e1af5e10bcb60e17a69b87
+Size (tightvnc-1.3.10_unixsrc.tar.bz2) = 1780510 bytes
+SHA1 (patch-Imakefile) = 41c01151bf6cbd9f1c577409a015c58cc06cc65e
+SHA1 (patch-Xvnc_config_cf_NetBSD.cf) = a136934fb7683674bd16f7e74f88a9749af756b8
+SHA1 (patch-Xvnc_config_cf_vnc.def) = de1acb24b39b5b0d262c91bf6539edcb38217573
+SHA1 (patch-Xvnc_config_cf_vnclibs.def) = cdc4eed88bbeba861baec8121467490f67b8da2e
+SHA1 (patch-Xvnc_config_imake_imakemdep.h) = 550d02431805fe358de456472efc7067900d62f3
+SHA1 (patch-Xvnc_configure) = 2effb3ed37aa617b557abf7f81cd8aa44c29406a
+SHA1 (patch-Xvnc_include_Xos.h) = d90d3b87bf037fe04fcd33ba901205458cbf7aaf
+SHA1 (patch-Xvnc_lib_Xdmcp_WC16.c) = 7357a6aeea9ceeeb90768f8f59c0e1f4893ede70
+SHA1 (patch-Xvnc_lib_Xdmcp_WC32.c) = d427d239bd1dc8db2cfabfd3268eb7e8c7d3a0ce
+SHA1 (patch-Xvnc_lib_Xdmcp_WC8.c) = f511b3caf1787225a3419ef3209dfb68999b5243
+SHA1 (patch-Xvnc_lib_font_fontfile_Imakefile) = 0cad2a8f15ddc4f8bbf8527891de09a404db8488
+SHA1 (patch-Xvnc_programs_Xserver_Imakefile) = 9455b16899b33fb35340576e9fcddce29377653f
+SHA1 (patch-Xvnc_programs_Xserver_cfb_cfbrrop.h) = 2602053ddbe07409b0c7caea7257b40ff68bfe55
+SHA1 (patch-Xvnc_programs_Xserver_cfb_stipsparc.s) = 013acd16171cdfdc4b97529af60978afb9b4d861
+SHA1 (patch-Xvnc_programs_Xserver_cfb_stipsprc32.s) = c95caf348ad41e2fd0954119d23c17e1c73795af
+SHA1 (patch-Xvnc_programs_Xserver_hw_vnc_Imakefile) = 24d1cda018b924463158037beab4bea4e0b3049f
+SHA1 (patch-Xvnc_programs_Xserver_include_misc.h) = 415e2f56632580e069af667f8bc01754bc132b06
+SHA1 (patch-Xvnc_programs_Xserver_include_servermd.h) = a725a003b61f29db3b23514e0db4bf055c3276a3
+SHA1 (patch-vncserver) = 048436d387be210a61e05b4b486a76ed4197ec47

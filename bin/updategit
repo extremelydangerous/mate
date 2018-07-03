@@ -1,0 +1,30 @@
+#!/bin/sh
+set -e
+COMMENT=${1:-UPDATE} 
+GIT=${2:-/usr/tmp/mate}
+export GIT_SSL_NO_VERIFY=true
+cd /usr/pkgsrc/mate
+if [ ! -d ${GIT} ]
+then
+	(mkdir -p $(dirname ${GIT})
+	cd $(dirname ${GIT})
+	git clone https://github.com/extremelydangerous/mate.git)
+fi
+(
+cd /usr/pkgsrc
+rsync \
+	--exclude CVS \
+	--exclude README.md \
+	--exclude .git \
+	--exclude .gitignore \
+	-avzHx --delete mate /usr/tmp
+)
+cd ${GIT}
+if ! grep -q https://extremelydangerous: .git/config
+then
+	echo "INSERT git login & password into .git/config"
+	exit 1
+fi
+git add -A .
+git commit -a --author "nervoso <nervoso@k1.com.br>" -m "${COMMENT} $(date)"
+git push origin master

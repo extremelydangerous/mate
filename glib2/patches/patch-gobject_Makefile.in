@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- gobject/Makefile.in.orig	2018-01-08 20:20:23.000000000 +0000
++++ gobject/Makefile.in
+@@ -1007,7 +1007,6 @@ gen_sources = xgen-gmh xgen-gmc xgen-gms
+ # target platform:
+ libgobjectinclude_HEADERS = $(gobject_target_headers)
+ libgobject_2_0_la_SOURCES = $(gobject_target_sources)
+-bin_SCRIPTS = glib-mkenums glib-genmarshal
+ # source files
+ gobject_query_SOURCES = gobject-query.c
+ # link programs against libgobject

@@ -1,0 +1,8 @@
+case ${STAGE} in
+POST-DEINSTALL)
+	if [ -s /usr/sbin/mdnsd ]
+	then
+		chmod 755 /usr/sbin/mdnsd
+	fi
+;;
+esac

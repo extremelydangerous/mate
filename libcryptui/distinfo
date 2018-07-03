@@ -1,0 +1,8 @@
+$NetBSD$
+
+SHA1 (gnome3/libcryptui-3.12.2.tar.xz) = af7af0b9138d47e46606aca0e41f10a1c0041bd0
+RMD160 (gnome3/libcryptui-3.12.2.tar.xz) = a7af672dd6491bf8d76df26bab025008cf3a043d
+SHA512 (gnome3/libcryptui-3.12.2.tar.xz) = 50ef407f0a9fe2ac8f4ab075e125fe8eabc55160b9b96a852d34e52c46be04e04b2a7c8288d2669e24865a89dc179af6bb0da8f6799e8b07fff7bc667c8eb1f0
+Size (gnome3/libcryptui-3.12.2.tar.xz) = 1163784 bytes
+SHA1 (patch-configure.ac) = 1064f26b4c56fcc94699ee7054199572c4aef734
+SHA1 (patch-libcryptui_Makefile.am) = 81ecb8430e94250cd8f92beb4c09a67993873802

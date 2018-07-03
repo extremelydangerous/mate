@@ -1,0 +1,14 @@
+$NetBSD$
+
+--- programs/Makefile.am.orig	2010-02-09 12:16:14.000000000 +0000
++++ programs/Makefile.am
+@@ -4,8 +4,7 @@ INCLUDES =					\
+ 	-I$(top_srcdir)				\
+ 	-I$(top_builddir)			\
+ 	$(TEST_CFLAGS)				\
+-	$(VFS_CFLAGS)				\
+-	-DG_DISABLE_DEPRECATED
++	$(VFS_CFLAGS)
+ 
+ libraries =						\
+ 	$(top_builddir)/libgnomevfs/libgnomevfs-2.la	\

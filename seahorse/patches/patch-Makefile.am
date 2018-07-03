@@ -1,0 +1,14 @@
+$NetBSD$
+
+--- Makefile.am.orig	2018-07-03 01:30:59.000000000 +0000
++++ Makefile.am
+@@ -5,8 +5,7 @@ ACLOCAL_AMFLAGS = -I build/m4 ${ACLOCAL_
+ SUBDIRS = \
+ 	. \
+ 	po \
+-	data \
+-	help
++	data
+ 
+ EXTRA_DIST = \
+     AUTHORS \

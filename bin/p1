@@ -1,0 +1,7 @@
+cd ../..
+rsync \
+	--exclude CVS \
+	--exclude README.md \
+	--exclude .git \
+	--exclude .gitignore \
+	-avzHx --delete -n mate /usr/tmp

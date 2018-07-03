@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (gnome-autoar-0.2.2.tar.xz) = 82f92e16a7c8b4fdd22abd169e5e4699b3a17ce4
+RMD160 (gnome-autoar-0.2.2.tar.xz) = 60860099d79a3f1660744084f17d44e53f7d996f
+SHA512 (gnome-autoar-0.2.2.tar.xz) = 78faf8f82eeab4cb5f1f364d6e9caa4d24f21f9b81a79ebde4404253f3e7ae120f44600f236612859810afc6fc6f1a8c6f2e065db98be79103255642139c10a2
+Size (gnome-autoar-0.2.2.tar.xz) = 295488 bytes
+SHA1 (patch-configure.ac) = edef72cd9af02f99db0c48c619062ef35f845644

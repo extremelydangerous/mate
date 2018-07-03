@@ -1,0 +1,9 @@
+case ${STAGE} in
+PRE-INSTALL)
+	if [ -s /usr/sbin/mdnsd ]
+	then
+		chmod 000 /usr/sbin/mdnsd
+	fi
+	rm -f /etc/rc.d/mdnsd
+;;
+esac

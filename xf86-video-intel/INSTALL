@@ -1,0 +1,12 @@
+case ${STAGE} in
+POST-INSTALL)
+	for f in misc cyrillic Type1 TTF OTF 75dpi 100dpi
+	do
+		ln -s @X11BASE@/lib/X11/fonts/$f/* @LOCALBASE@/share/fonts/X11/$f || true
+		ln -s @X11BASE@/lib/X11/fonts/$f/* @LOCALBASE@/lib/X11/fonts/$f || true
+	done
+	echo RUNNING FC-CACHE ....
+	@LOCALBASE@/bin/fc-cache -r
+	echo DONE
+;;
+esac

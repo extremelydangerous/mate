@@ -1,0 +1,14 @@
+$NetBSD$
+
+--- dom/base/moz.build.orig	2017-06-15 20:52:09.000000000 +0000
++++ dom/base/moz.build
+@@ -487,6 +487,9 @@ if CONFIG['MOZ_BUILD_APP'] in ['browser'
+ if CONFIG['MOZ_X11']:
+     CXXFLAGS += CONFIG['TK_CFLAGS']
+ 
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ GENERATED_FILES += [
+     'PropertyUseCounterMap.inc',
+     'UseCounterList.h',

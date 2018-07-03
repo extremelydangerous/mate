@@ -1,0 +1,6 @@
+case ${STAGE} in
+POST-INSTALL)
+	mkdir -p /etc/ssl
+	ln -sf /etc/openssl/certs /etc/ssl
+;;
+esac

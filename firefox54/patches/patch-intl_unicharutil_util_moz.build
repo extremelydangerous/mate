@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- intl/unicharutil/util/moz.build.orig	2017-06-15 20:51:57.000000000 +0000
++++ intl/unicharutil/util/moz.build
+@@ -29,4 +29,7 @@ if CONFIG['ENABLE_INTL_API']:
+         'ICUUtils.cpp',
+     ]
+ 
++if CONFIG['MOZ_SYSTEM_HARFBUZZ']:
++    CXXFLAGS += CONFIG['MOZ_HARFBUZZ_CFLAGS']
++
+ FINAL_LIBRARY = 'xul'

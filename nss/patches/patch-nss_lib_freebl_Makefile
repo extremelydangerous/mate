@@ -1,0 +1,54 @@
+$NetBSD$
+
+--- nss/lib/freebl/Makefile.orig	2018-06-13 04:10:07.000000000 +0000
++++ nss/lib/freebl/Makefile
+@@ -108,17 +108,17 @@ endif
+ # NSS_X86 means the target is a 32-bits x86 CPU architecture
+ # NSS_X64 means the target is a 64-bits 64 CPU architecture
+ # NSS_X86_OR_X64 means the target is either x86 or x64
+-ifeq (,$(filter-out i386 x386 x86 x86_64,$(CPU_ARCH)))
+-        DEFINES += -DNSS_X86_OR_X64
+-        EXTRA_SRCS += gcm-x86.c aes-x86.c
+-$(OBJDIR)/gcm-x86.o: CFLAGS += -mpclmul -maes
+-$(OBJDIR)/aes-x86.o: CFLAGS += -mpclmul -maes
+-ifneq (,$(USE_64)$(USE_X32))
+-        DEFINES += -DNSS_X64
+-else
+-        DEFINES += -DNSS_X86
+-endif
+-endif
++#ifeq (,$(filter-out i386 x386 x86 x86_64,$(CPU_ARCH)))
++#        DEFINES += -DNSS_X86_OR_X64
++#        EXTRA_SRCS += gcm-x86.c aes-x86.c
++#$(OBJDIR)/gcm-x86.o: CFLAGS += -mpclmul -maes
++#$(OBJDIR)/aes-x86.o: CFLAGS += -mpclmul -maes
++#ifneq (,$(USE_64)$(USE_X32))
++#        DEFINES += -DNSS_X64
++#else
++#        DEFINES += -DNSS_X86
++#endif
++#endif
+ 
+ ifeq ($(OS_TARGET),OSF1)
+     DEFINES += -DMP_ASSEMBLY_MULTIPLY -DMP_NO_MP_WORD
+@@ -298,7 +298,7 @@ endif
+ # to bind the blapi function references in FREEBLVector vector
+ # (ldvector.c) to the blapi functions defined in the freebl
+ # shared libraries.
+-ifeq (,$(filter-out BSD_OS FreeBSD Linux NetBSD OpenBSD, $(OS_TARGET)))
++ifeq (,$(filter-out BSD_OS DragonFly FreeBSD Linux NetBSD OpenBSD, $(OS_TARGET)))
+     MKSHLIB += -Wl,-Bsymbolic
+ endif
+ 
+@@ -450,7 +450,11 @@ else
+     ifdef NS_USE_GCC
+ 	LD = gcc
+ 	AS = gcc
++        ifdef CC_IS_CLANG
++	ASFLAGS = -no-integrated-as
++        else
+ 	ASFLAGS = -x assembler-with-cpp
++        endif
+     endif
+     ifeq ($(USE_64),1)
+ 	# Solaris for AMD64

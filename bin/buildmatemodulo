@@ -1,0 +1,2 @@
+rm -f distinfo
+make distinfo install clean || /bin/sh -c "make print-PLIST > PLIST;make rmstage;make install clean"

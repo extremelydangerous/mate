@@ -1,0 +1,2 @@
+quake maps pak0.pak pak1.pac
+move it to ${PREFIX}/share/quake/id1
