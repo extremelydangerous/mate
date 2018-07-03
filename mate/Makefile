@@ -65,6 +65,7 @@ DEPENDS+=	mate-utils>=${VERSION}:../../mate/mate-utils
 DEPENDS+=	mozo>=${VERSION}:../../mate/mozo
 DEPENDS+=	pluma>=${VERSION}:../../mate/pluma
 DEPENDS+=	totem:../../multimedia/totem
+DEPENDS+=	git:../../devel/git
 
 DHCPCDHOOK=	21-mate-resolv
 DHCPCDHOOKLOC=	${FILESDIR}/share/examples/mate/${DHCPCDHOOK}

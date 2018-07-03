@@ -15,7 +15,11 @@ USE_PKGLOCALEDIR=	YES
 USE_TOOLS+=		gmake intltool msgfmt perl pkg-config
 USE_LIBTOOL=		YES
 
-GCONF_SCHEMAS+=	gnome-mount.schemas
+GENERATE_PLIST=		cd ${DESTDIR}${LOCALBASE};find * \! -type d;
+
+CONFIGURE_ARGS+=	--disable-nautilus-extension
+
+GCONF_SCHEMAS+=		gnome-mount.schemas
 
 .include "../../mk/bsd.prefs.mk"
 .if ${OPSYS} == "NetBSD"
@@ -29,6 +33,7 @@ post-extract:
 .include "../../sysutils/dbus-glib/buildlink3.mk"
 .include "../../mate/hal/buildlink3.mk"
 .include "../../sysutils/libnotify/buildlink3.mk"
-.include "../../mate/nautilus/buildlink3.mk"
 .include "../../x11/gtk2/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
+
+.include "../Makefile"
