@@ -29,7 +29,6 @@ BUILDLINK_PKGSRCDIR.gnome-mount?=	../../mate/gnome-mount
 .include "../../sysutils/dbus-glib/buildlink3.mk"
 .include "../../mate/hal/buildlink3.mk"
 .include "../../sysutils/libnotify/buildlink3.mk"
-.include "../../mate/nautilus/buildlink3.mk"
 .include "../../x11/gtk2/buildlink3.mk"
 .endif	# GNOME_MOUNT_BUILDLINK3_MK
 
