@@ -9,7 +9,6 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	nervoso@k1.com.br
 HOMEPAGE=	https://download.gnome.org/sources/evolution/3.24/
 COMMENT=	This is evolution 3.24.2
-#LICENSE=	# TODO: (see mk/license.mk)
 
 USE_CMAKE=	yes
 USE_TOOLS+=	gettext-m4 gmake gm4 intltool msgfmt pkg-config
