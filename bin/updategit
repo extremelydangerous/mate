@@ -25,7 +25,6 @@ then
 	echo "INSERT git login & password into .git/config"
 	exit 1
 fi
-git pull
 git add -A .
 git commit -a --author "nervoso <nervoso@k1.com.br>" -m "${COMMENT} $(date)"
 git push origin master
