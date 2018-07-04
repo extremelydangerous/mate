@@ -1,0 +1,15 @@
+$NetBSD$
+
+SHA1 (RetroShare/v0.6.4.tar.gz) = 81bba3753d4a6039e89c9ec11f0abd4c2975e8f5
+RMD160 (RetroShare/v0.6.4.tar.gz) = 4025206f4b940b5a81e120ef526509778cfca350
+SHA512 (RetroShare/v0.6.4.tar.gz) = 7fcca6479b73cb4d70532fe46bb4cf24332d523b14a198a0e81689d0e00b62ca300d167be5ac282200e97f5fd9dc6b6c3a2c992ab1daa25846db1a404bf616f8
+Size (RetroShare/v0.6.4.tar.gz) = 20018361 bytes
+SHA1 (patch-RetroShare.pro) = 136238ff6dedf12379658dc9f50dc3d0a9a98104
+SHA1 (patch-libbitdht_src_util_bdrandom.cc) = bace088acb10329e2ea3173d45b083e73bf5e49a
+SHA1 (patch-libbitdht_src_util_bdthreads.cc) = 7ef99c48c3e18f75f667deea83ade39d8ae11c73
+SHA1 (patch-libretroshare_src_dbase_findex.cc) = 6348dbbae7902cf9fa32afd7f9f3ef6fa41977bb
+SHA1 (patch-libretroshare_src_dbase_findex.h) = e1867775a07a80f00940117370f6aa00f1c3333c
+SHA1 (patch-libretroshare_src_rsserver_rsloginhandler.cc) = 1751a36303f3858ae4e4a49b69fb60911df1fd50
+SHA1 (patch-libretroshare_src_util_rsthreads.cc) = 265a85108ac9bd245045f591c3cad10d91298c84
+SHA1 (patch-plugins_VOIP_gui_VideoProcessor.cpp) = 605be157f5443374a7fc29960f7c26a14ca726a4
+SHA1 (patch-retroshare.pri) = ff5f22ae14172cda1c794b7a19d53a76f32972f3
