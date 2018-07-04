@@ -44,7 +44,7 @@ DEPENDS+=	dia-python:../../graphics/dia-python
 DEPENDS+=	DVDStyler:../../multimedia/dvdstyler
 DEPENDS+=	pidgin-facebookchat:../../chat/pidgin-facebookchat
 DEPENDS+=	gnome-keyring-manager>0:../../security/gnome-keyring-manager
-DEPENDS+=	evolution:../../mail/evolution
+DEPENDS+=	evolution:../../mate/evolution
 DEPENDS+=	tsclient:../../mate/tsclient
 DEPENDS+=	geda:../../mate/geda
 DEPENDS+=	pcb:../../mate/pcb
@@ -53,7 +53,6 @@ DEPENDS+=	rhythmbox:../../audio/rhythmbox
 #DEPENDS+=	abiword:../../editors/abiword
 DEPENDS+=	libgsf>0:../../devel/libgsf
 .if !empty(MACHINE_ARCH:Mi386*)
-.include	"../../mate/firefox52/buildlink3.mk"
 .include	"../../mate/firefox52-l10n/buildlink3.mk"
 .include	"../../mate/audacity/buildlink3.mk"
 .include	"../../mate/libreoffice6.0.4/buildlink3.mk"

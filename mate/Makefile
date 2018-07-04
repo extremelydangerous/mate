@@ -21,6 +21,7 @@ RCD_SCRIPTS+=	fixhostname
 .include	"../../meta-pkgs/pulseaudio-tools/buildlink3.mk"
 .include	"../../audio/sox/buildlink3.mk"
 
+DEPENDS+=	cupsf>0:../../print/cups
 DEPENDS+=	liberation-ttf>0:../../fonts/liberation-ttf
 DEPENDS+=	pkg_tarup>0:../../pkgtools/pkg_tarup
 DEPENDS+=	cscope>0:../../devel/cscope

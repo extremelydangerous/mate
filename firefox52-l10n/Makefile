@@ -30,5 +30,6 @@ PLIST_SRC=		PLIST_SMALL
 EXTENSIONS_DIR=		${PREFIX}/lib/firefox52/browser/extensions
 XPI_FILES=		${FIREFOX_LOCALES:=.xpi}
 
+.include "../../mate/firefox52/buildlink3.mk"
 .include "../../www/firefox/xpi.mk"
 .include "../../mk/bsd.pkg.mk"
