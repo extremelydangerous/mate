@@ -11,22 +11,23 @@ COMMENT=	bitcoin electrum client
 
 USE_PKGLOCALEDIR=	yes
 USE_LANGUAGES=		python
+PYTHON_VERSION_REQD=	36
 
 REPLACE_PYTHON+=	electrum
 REPLACE_PYTHON+=	scripts/util.py
 REPLACE_PYTHON+=	setup-release.py
 REPLACE_PYTHON+=	setup.py
 
-DEPENDS+=	py27-dns>0:../../net/py-dns
-DEPENDS+=	py27-aes>0:../../security/py-aes
-DEPENDS+=	py27-ecdsa>0:../../security/py-ecdsa
-DEPENDS+=	py27-tlslite>0:../../security/py-tlslite
-DEPENDS+=	py27-pbkdf2>0:../../security/py-pbkdf2
-DEPENDS+=	py27-protobuf>0:../../devel/py-protobuf
-DEPENDS+=	py27-requests>0:../../devel/py-requests
+DEPENDS+=	py36-dns>0:../../net/py-dns
+DEPENDS+=	py36-aes>0:../../security/py-aes
+DEPENDS+=	py36-ecdsa>0:../../security/py-ecdsa
+DEPENDS+=	py36-tlslite>0:../../security/py-tlslite
+DEPENDS+=	py36-pbkdf2>0:../../security/py-pbkdf2
+DEPENDS+=	py36-protobuf>0:../../devel/py-protobuf
+DEPENDS+=	py36-requests>0:../../devel/py-requests
 DEPENDS+=	py27-google-apputils>0:../../devel/py-google-apputils
 DEPENDS+=	py27-jsonrpclib>0:../../textproc/py-jsonrpclib
-DEPENDS+=	py27-qrcode>0:../../graphics/py-qrcode
+DEPENDS+=	py36-qrcode>0:../../graphics/py-qrcode
 
 .include	"../../x11/py-qt4/buildlink3.mk"
 .include        "../../graphics/hicolor-icon-theme/buildlink3.mk"
