@@ -1,35 +1,46 @@
-$NetBSD$
-
---- retroshare.pri.orig	2016-08-31 11:24:02.000000000 +0000
+--- retroshare.pri.orig	2018-03-13 19:25:38 UTC
 +++ retroshare.pri
-@@ -9,12 +9,24 @@ CONFIG *= libresapihttpserver
- DEFINES *= RS_ENABLE_GXS
+--- retroshare.pri.orig	2018-03-13 19:25:38.000000000 +0000
++++ retroshare.pri
+@@ -11,12 +11,12 @@ no_retroshare_gui:CONFIG -= retroshare_g
  
- unix {
+ # To disable RetroShare-nogui append the following
+ # assignation to qmake command line "CONFIG+=no_retroshare_nogui"
+-CONFIG *= retroshare_nogui
++CONFIG *= no_retroshare_nogui
+ no_retroshare_nogui:CONFIG -= retroshare_nogui
+ 
+ # To enable RetroShare plugins append the following
+ # assignation to qmake command line "CONFIG+=retroshare_plugins"
+-CONFIG *= no_retroshare_plugins
++CONFIG *=retroshare_plugins
+ retroshare_plugins:CONFIG -= no_retroshare_plugins
+ 
+ # To enable RetroShare-android-service append the following assignation to
+@@ -100,9 +100,24 @@ rs_macos10.9:CONFIG -= rs_macos10.11
+ rs_macos10.10:CONFIG -= rs_macos10.11
+ rs_macos10.12:CONFIG -= rs_macos10.11
+ 
++netbsd-* {
++	isEmpty(PREFIX)   { PREFIX   = "/usr/pkg" }
++	isEmpty(BIN_DIR)  { BIN_DIR  = "$${PREFIX}/bin" }
++	isEmpty(INC_DIR)  { INC_DIR  = "$${PREFIX}/include/retroshare" }
++	isEmpty(LIB_DIR)  { LIB_DIR  = "$${PREFIX}/lib" }
++	isEmpty(DATA_DIR) { DATA_DIR = "$${PREFIX}/share/retroshare" }
++	isEmpty(PLUGIN_DIR) { PLUGIN_DIR = "$${LIB_DIR}/retroshare/extensions6" }
++
++    rs_autologin {
++        !macx {
++            DEFINES *= HAS_GNOME_KEYRING
++            PKGCONFIG *= gnome-keyring-1
++        }
++    }
++}
+ 
+-linux-* {
 -	isEmpty(PREFIX)   { PREFIX   = "/usr" }
--	isEmpty(BIN_DIR)  { BIN_DIR  = "$${PREFIX}/bin" }
--	isEmpty(INC_DIR)  { INC_DIR  = "$${PREFIX}/include/retroshare06" }
--	isEmpty(LIB_DIR)  { LIB_DIR  = "$${PREFIX}/lib" }
--	isEmpty(DATA_DIR) { DATA_DIR = "$${PREFIX}/share/RetroShare06" }
--	isEmpty(PLUGIN_DIR) { PLUGIN_DIR  = "$${LIB_DIR}/retroshare/extensions6" }
-+	PREFIX   = "/usr/pkg"
-+	BIN_DIR  = "$${PREFIX}/bin"
-+	DATA_DIR = "$${PREFIX}/share/RetroShare06"
-+	PLUGIN_DIR  = "$${PREFIX}/lib/retroshare/extensions6"
-+	DEFINES += "fseeko64=fseeko"
-+	DEFINES += "ftello64=ftello"
-+	DEFINES += "fopen64=fopen"
-+	DEFINES += "stat64=stat"
-+	DEFINES += "QTDIR=$$QTDIR"
-+	DEFINES += "statvfs64=statvfs"
-+	DEFINES += "memalign=posix_memalign"
-+	QMAKE_CFLAGS += $$system(pkg-config --cflags QtGui QtCore glib-2.0 sqlcipher libxml-2.0 libavutil \
-+		libupnp libavcodec gnome-keyring-1 openssl cryptui-0.0) 
-+	QMAKE_CXXFLAGS = $$QMAKE_CFLAGS
-+	LIBS -= -lsqlite3
-+	QMAKE_LFLAGS += $$system(pkg-config --libs sqlcipher glib-2.0 libxml-2.0 libavutil \
-+		libavcodec libupnp gnome-keyring-1 openssl cryptui-0.0 QtGui QtCore)
-+	CONFIG += upnp_libupnp
- }
- 
- android-g++ {
++freebsd-* {
++	isEmpty(PREFIX)   { PREFIX   = "/usr/local" }
+ 	isEmpty(BIN_DIR)  { BIN_DIR  = "$${PREFIX}/bin" }
+ 	isEmpty(INC_DIR)  { INC_DIR  = "$${PREFIX}/include/retroshare" }
+ 	isEmpty(LIB_DIR)  { LIB_DIR  = "$${PREFIX}/lib" }

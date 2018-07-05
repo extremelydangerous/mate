@@ -1,6 +1,6 @@
 $NetBSD$
 
---- libbitdht/src/util/bdrandom.cc.orig	2016-12-29 15:58:49.000000000 +0000
+--- libbitdht/src/util/bdrandom.cc.orig	2018-07-04 15:57:13.000000000 +0000
 +++ libbitdht/src/util/bdrandom.cc
 @@ -13,7 +13,7 @@ static bool auto_seed = bdRandom::seed( 
  #else
