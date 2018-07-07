@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (PyQt5_gpl-5.10.1.tar.gz) = 638a80519f3250e813ebd5a669651f43f416f14b
+RMD160 (PyQt5_gpl-5.10.1.tar.gz) = 4e0d454172288d26d40ebf2c15a70e0e271da57e
+SHA512 (PyQt5_gpl-5.10.1.tar.gz) = 04cd0292f7a088f9c0d088d7c73ec96cfc40253f771dfdf194eb92be7635e6fcaf04863fa24215e9c34a096658549bb2feeb8d8fdca1e39ed87f0256ef0f790b
+Size (PyQt5_gpl-5.10.1.tar.gz) = 3110469 bytes
+SHA1 (patch-config-tests_cfgtest__QtPrintSupport.cpp) = 2207ae474d305721e8427d2d5a71f3b979e72b4c

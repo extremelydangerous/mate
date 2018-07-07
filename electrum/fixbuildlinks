@@ -1,0 +1,8 @@
+set -e
+make clean 2>&1 | grep buildlink3.mk | awk '{print $NF}' | \
+while read x
+do
+	D=$(dirname $x)
+	(cd $D; createbuildlink > buildlink3.mk)
+	echo $D OK
+done

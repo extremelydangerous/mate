@@ -47,7 +47,7 @@ BUILDLINK_TRANSFORM+=	rm:-Wno-register
 .include 	"../../security/libgcrypt/buildlink3.mk"
 .include 	"../../mate/libcryptui/buildlink3.mk"
 .include 	"../../security/seahorse/buildlink3.mk"
-.include 	"../../graphics/opencv2/buildlink3.mk"
+.include 	"../../graphics/opencv/buildlink3.mk"
 .include 	"../../multimedia/ffmpeg3/buildlink3.mk"
 .include 	"../../www/curl/buildlink3.mk"
 .include 	"../../www/libmicrohttpd/buildlink3.mk"
